@@ -59,6 +59,11 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
       phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.']
     });
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+    expect(getCharacter('Melissandre')).toMatchObject({
+      name: 'Melissandre',
+      class: 'Necromancer',
+      phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']
+    });
     // Teste se os parâmetros não são Case Sensitive.
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
   });
