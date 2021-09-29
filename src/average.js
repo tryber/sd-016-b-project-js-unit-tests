@@ -11,6 +11,18 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const average = () => {};
 
+const average = (parametros) => {
+  const tamanhoDoArray = parametros.length;
+  if (tamanhoDoArray === 0) return undefined;
+  let count = 0;
+  for (const num of parametros) {
+    if (typeof (num) === 'string') {
+      return undefined;
+    }
+    count += num;
+  }
+  return Math.round(count / tamanhoDoArray);
+};
+console.log(average([1, '2']));
 module.exports = average;
