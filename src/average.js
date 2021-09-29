@@ -12,8 +12,30 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  
+const verifyParameters = (arrayParameter) => {
+  let status = false;
+  if (arrayParameter.length === 0) {
+    status = true;
+  }
+
+  for (let i = 0; i < arrayParameter.length; i += 1) {
+    if (typeof arrayParameter[i] !== 'number') {
+      status = true;
+    }
+  }
+  return status;
+};
+
+const average = (array) => {
+  if (verifyParameters(array)) {
+    return undefined;
+  }
+  let somaDosValores = 0;
+  for (let i = 0; i < array.length; i += 1) {
+    somaDosValores += array[i];
+  }
+  let mediaDosValores = somaDosValores / array.length;
+  return Math.round(mediaDosValores);
 };
 
 module.exports = average;
