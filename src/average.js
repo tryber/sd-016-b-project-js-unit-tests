@@ -23,7 +23,6 @@ const average = (a) => {
     count += a[i];
   }
   let media = count / a.length;
-  console.log(count);
   return Number(media.toFixed());
 };
 
