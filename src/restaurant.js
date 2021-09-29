@@ -85,11 +85,20 @@ const pedido = (food) => {
   restaurant.consumption.push(food);
 };
 
+const price = () => {
+  let money = 0;
+  restaurant.consumption.forEach((element) => {
+    if (restaurant.fetchMenu().food[element]) money += restaurant.fetchMenu().food[element];
+    if (restaurant.fetchMenu().drink[element]) money += restaurant.fetchMenu().drink[element];
+  });
+  return money;
+};
+
 const createMenu = (object) => {
   restaurant.fetchMenu = () => object;
   restaurant.consumption = [];
   restaurant.order = pedido;
-  restaurant.pay = 'somaDosPreçosDosPedidos';
+  restaurant.pay = price;
   return restaurant;
 };
 
