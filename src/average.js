@@ -11,7 +11,22 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-.
-const average = () => {};
+
+const average = (array) => {
+  if (array.some((value) => typeof value !== 'number') || (array.length === 0)) return;
+  return Math.round(array.reduce((acc, curr) => acc + curr, 0) / array.length);
+};
 
 module.exports = average;
+
+// Math.round() - arredonda valor
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+
+// reduce() - cada elemento do array resultando num único valor de retorno.
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+// some() - testar elemento dentro de um array a um critério determinado.
+// https://desenvolvimentoparaweb.com/javascript/every-some-find-includes-javascript/
+
+// Acc e Curr - previousValue e CurrentValue (linter não permite mais que 100 letras na linha);
+// return sem valor - retorna undefined
