@@ -58,5 +58,3 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
       expect(circle(3).circumference).toBe(18.84);
     });
   });
-
-//expect(typeof vqv('Tunico', 30)).toBe('string');
