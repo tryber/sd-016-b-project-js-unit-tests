@@ -12,27 +12,29 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-// eslint-disable-next-line complexity
 const average = (array) => {
   let somenteNumber = true;
   let soma = 0;
+  const quantidade = array.length;
 
   // verifica se só tem numeros
-  for (let i = 0; i < array.length; i += 1) {
+  for (let i = 0; i < quantidade; i += 1) {
     let validacao = typeof (array[i]) === 'number';
 
     if (!validacao) {
       somenteNumber = false;
+      break;
     }
+
+    soma += array[i];
   }
 
-  if ((somenteNumber === true) && array.length > 0) { // verifica se é somente numero e se o array não é vazio
-    for (let i = 0; i < array.length; i += 1) { // soma os numeros do array
-      soma += array[i];
-    }
+  if (somenteNumber === true && quantidade > 0) {
     return (Math.round(soma / array.length));
-  } 
-    return undefined; // se não for somente numeros ou se o array for fazio vazio
+  }
+    return undefined;
 };
+
+average([]);
 
 module.exports = average;
