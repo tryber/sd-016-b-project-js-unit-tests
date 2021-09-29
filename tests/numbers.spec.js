@@ -14,6 +14,9 @@ const numbers = require('../src/numbers');
 
 */
 
+// consutei a documentação
+// https://jestjs.io/pt-BR/docs/using-matchers#verdade
+
 describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   it('Verifica se a função `numbers`retorna `true` quando o array contém apenas numeros e falso caso contrário', () => {
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
