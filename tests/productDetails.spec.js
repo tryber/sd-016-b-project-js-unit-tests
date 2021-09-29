@@ -34,7 +34,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se o retorno da função é um array.
     expect(productDetails('Alcool gel', 'Máscara')).toBeInstanceOf(Array);
     // Teste se o array retornado pela função contém dois itens dentro.
-    expect(productDetails('Máscara', 'Alcocl gel')).toHaveLength(2);
+    expect(productDetails('Alcool gel', 'Máscara')).toHaveLength(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
     expect(productDetails('Alcool gel', 'Máscara')[0]).toBeInstanceOf(Object);
     expect(productDetails('Alcool gel', 'Máscara')[1]).toBeInstanceOf(Object);
