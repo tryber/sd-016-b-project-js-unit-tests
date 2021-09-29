@@ -13,5 +13,5 @@
 */
 
 const average = () => {};
-
+ 'Iniciando projeto !!! '
 module.exports = average;
