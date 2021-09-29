@@ -13,23 +13,21 @@
 */
 
 const average = (array) => {
-
   if (array.length === 0) {
     return undefined;
   }
-  
+
   let result = 0;
   for (let index = 0; index < array.length; index += 1) {
-
-    if (typeof(array[index]) === 'string') {
+    if (typeof (array[index]) === 'string') {
       return undefined;
     }
-    
+
     result = result += array[index] / array.length;
   }
   return Math.round(result);
-}
+};
 
-console.log(average([]));
+console.log(average([1, 2]));
 
 module.exports = average;
