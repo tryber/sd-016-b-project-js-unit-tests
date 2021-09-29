@@ -10,8 +10,22 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
+    [mudança para o primeiro pull request]******
 */
+const average = (array) => {
+  let sum = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    } 
+    sum += array[i];
+  }
+  let media = Math.round(sum / (array.length));
+  return media;
+};
 
-const average = () => {};
-
+console.log(average([]));
 module.exports = average;
