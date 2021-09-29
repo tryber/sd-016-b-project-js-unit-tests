@@ -55,8 +55,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       for (i = 3; i > 0; i -= 1) {
         id1 += objeto[0].details.productId[objeto[0].details.productId.length - i]
         id2 += objeto[1].details.productId[objeto[1].details.productId.length - i]
-        console.log(id1);
-        console.log(id2);
+
       }
       if(id1 === id2) {
         return true;
