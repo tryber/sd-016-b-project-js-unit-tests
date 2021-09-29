@@ -78,7 +78,48 @@
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+// contador para saber quantas vezes se repete um pedido
+const count = (param, param2) => {
+  let answer = 0;
+  for (let i = 0; i < param2.length; i += 1) {
+    if (param === param2[i]) {
+      answer += 1;
+    }
+  }
+  return answer;
+};
+// irá percorrer o array consumação pegando o valor de cada produto e somando
+const percorer = (param, param2) => {
+  const arrayKeys = Object.keys(param);
+  const arrayConsum = param2;
+  let answer = 0;
+  for (let i = 0; i < arrayConsum.length; i += 1) {
+    if (arrayConsum.includes(arrayKeys[i])) {
+      answer += param[arrayKeys[i]];
+    }
+    if (count(arrayKeys[i], arrayConsum) > 1) {
+      answer += param[arrayKeys[i]];
+    }
+    }
+    return answer;
+  };
 
-const createMenu = () => {};
+const createMenu = (param1) => {
+  const obj = {
+    fetchMenu: () => param1,
+    consumption: [],
+  };
+  const addConsu = (string) => obj.consumption.push(string);
+  obj.order = addConsu;
+  const payment = () => {
+    const getFood = obj.fetchMenu().food;
+    const getDrink = obj.fetchMenu().drink;
+    let answer = 0;
+    answer = percorer(getFood, obj.consumption) + percorer(getDrink, obj.consumption);
+    return ((answer * 10) / 100) + answer;
+  };
+  obj.pay = payment;
+  return obj;
+};
 
 module.exports = createMenu;
