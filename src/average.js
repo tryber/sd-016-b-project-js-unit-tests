@@ -27,13 +27,8 @@ const average = (arr) => {
     }
     sum += object;
   }
-  // if (sum === 0) {
-  //   return med;
-  // }
   med = sum / lengthArr;
   return Math.round(med);
 };
-
-// console.log(average([0, 0, 0, 0, 0, 0, 0]));
 
 module.exports = average;
