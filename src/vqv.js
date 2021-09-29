@@ -18,7 +18,7 @@
 
 const vqv = (name, age) => {
   if (name !== undefined && age !== undefined) {
-    let endOfSpeech = 'trabalho na Trybe e mando muito em programação!'
+    let endOfSpeech = 'trabalho na Trybe e mando muito em programação!';
     return `Oi, meu nome é ${name}!\nTenho ${age} anos,\n${endOfSpeech}\n#VQV!`;
   } 
     return undefined;
