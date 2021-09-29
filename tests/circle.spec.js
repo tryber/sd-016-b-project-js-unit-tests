@@ -33,7 +33,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(' ')).toBeUndefined();
 
     // Teste se circle retorna um objeto.
-    expect(typeof {value: 'value'}).toBe('object');
+    expect(typeof circle(1)).toBe('object');
 
     // Teste se o objeto retornado tem 3 propriedades.
     expect(circle(1)).toHaveProperty('radius');
@@ -54,6 +54,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(3).area).toBeCloseTo(28.26);
     expect(circle(3).circumference).toBeCloseTo(18.84);
 
-    // expect(circle(3)).toBeCloseTo({ radius: 3, area: toBeCloseTo(28.25), circumference: toBeCloseTo(18.84) });
+    // expect(circle(3)).toBeCloseTo({ radius: 3, area: toBeCloseTo(28.26), circumference: toBeCloseTo(18.84) });
   });
 });
