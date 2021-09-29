@@ -13,8 +13,9 @@
 */
 
 const checkPar = (arr) => {
-  let check = true;
-  for (let index = 0; index <= arr.length; index += 1) {
+  let check = false;
+  for (let index = 0; index < arr.length; index += 1) {
+    check = true;
     if (typeof (arr[index]) !== 'number') {
       check = false;
       break;
@@ -32,8 +33,9 @@ const average = (arr) => {
     }
     mediaSomaAll = Math.round(somaAll / arr.length);
   } else {
-    mediaSomaAll = 'undefined';
+    mediaSomaAll = undefined;
   }
+  console.log(mediaSomaAll);
   return mediaSomaAll;
 };
 
