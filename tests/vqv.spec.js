@@ -27,26 +27,23 @@ describe('3 - Implemente a função `vqv`', () => {
   });
 
   it('Verifica se a função `vqv` retorna a frase esperada com nome e idade', () => {
-    expect(
-      vqv('Tunico', 29)).toBe(
+    expect(vqv('Tunico', 29)).toBe(
       'Oi, meu nome é Tunico!\n' +
         'Tenho 29 anos,\n' +
         'trabalho na Trybe e mando muito em programação!\n' +
-        '#VQV!',
+        '#VQV!'
     );
-    expect(
-      vqv('Alberto', 30)).toBe(
+    expect(vqv('Alberto', 30)).toBe(
       'Oi, meu nome é Alberto!\n' +
         'Tenho 30 anos,\n' +
         'trabalho na Trybe e mando muito em programação!\n' +
-        '#VQV!',
+        '#VQV!'
     );
-    expect(
-      vqv('Hamaji', 29)).toBe(
+    expect(vqv('Hamaji', 29)).toBe(
       'Oi, meu nome é Hamaji!\n' +
         'Tenho 29 anos,\n' +
         'trabalho na Trybe e mando muito em programação!\n' +
-        '#VQV!',
+        '#VQV!'
     );
   });
 
