@@ -21,13 +21,9 @@ const average = (array) => {
     if (typeof (array[i]) !== 'number') {
       return undefined;
     }
-    console.log(array[i]);
     num += array[i];
   }
   return Math.round(num / array.length);
 };
-
-console.log(average([1, 3]));
-console.log(average([]));
 
 module.exports = average;
