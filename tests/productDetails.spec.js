@@ -39,6 +39,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect((typeof productDetails('Alcool gel', 'Máscara')[0]) && (typeof productDetails('Alcool gel', 'Máscara')[1])).toBe('object');
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos
     // também são diferentes entre si.
+    expect(productDetails('Alcool gel', 'Máscara')[0] !== productDetails('Alcool gel', 'Máscara')[1]).toBeTruthy();
     // Teste se os dois productIds terminam com 123.
     expect(productDetails('Alcool gel', 'Máscara')[0]).toHaveProperty('details.productId', 'Alcool gel123');
     expect(productDetails('Alcool gel', 'Máscara')[1]).toHaveProperty('details.productId', 'Máscara123');
