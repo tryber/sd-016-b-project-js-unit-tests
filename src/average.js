@@ -18,6 +18,7 @@ const average = (array) => {
   }
 
   let result = 0;
+
   for (let index = 0; index < array.length; index += 1) {
     if (typeof (array[index]) === 'string') {
       return undefined;
@@ -25,6 +26,7 @@ const average = (array) => {
 
     result += array[index];
   }
+
   return Math.round(result / array.length);
 };
 
