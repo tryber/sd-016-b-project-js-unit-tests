@@ -28,11 +28,11 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
 
-  const objEqual1 = productDetails('Arthur','Arthur')[0];
-  const objEqual2 = productDetails('Arthur','Arthur')[1];
-
   const diffObj1 = productDetails('Arthur','Carol')[0];
   const diffObj2 = productDetails('Arthur','Carol')[1];
+
+  const objProduct1 = diffObj1.details.productId
+  const objProduct2 = diffObj2.details.productId
 
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     expect(typeof productDetails).toEqual('function');
@@ -47,9 +47,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(typeof diffObj1 && typeof diffObj2).toBe('object' && 'object');
   });
   it('Verifica se quando passados parametros diferentes, os objetos também são diferentes', () => {
-    expect((diffObj1.details.productId != diffObj2.details.productId) || (diffObj1.name != diffObj2.name)).toEqual(true);
+    expect((objProduct1 != objProduct2) || (diffObj1.name != diffObj2.name)).toEqual(true);
   });
   it('Verifica se os dois productId`s terminam com 123', () => {
-    expect(diffObj1.details.productId.includes('123') && diffObj2.details.productId.includes('123')).toEqual(true);
+    expect(objProduct1.includes('123') && objProduct2.includes('123')).toEqual(true);
   })
 });
