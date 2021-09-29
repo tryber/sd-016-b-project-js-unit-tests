@@ -17,12 +17,13 @@
 */
 
 const vqv = (string, number) => {
-  if(typeof string !== 'string' || typeof number !== 'number'){
+  if (typeof string !== 'string' || typeof number !== 'number') {
     return undefined;
-  } else{    
-    return `Oi, meu nome é ${string}!\nTenho ${number} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`
-  }
-  
+  }    
+    return `Oi, meu nome é ${string}!
+Tenho ${number} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
 };
 
 module.exports = vqv;

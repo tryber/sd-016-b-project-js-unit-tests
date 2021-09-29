@@ -15,19 +15,19 @@
 const average = (array) => {
   let sum = 0;
 
-  if( array == '') {
+  if (array.length === 0) {
     return undefined;
   }  
 
-  for(let i = 0; i < array.length; i += 1){
-    if(typeof array[i] !== 'number'){
-      return undefined
-    } else {      
-      sum = sum + array[i];
-    }
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof array[i] !== 'number') {
+      return undefined;
+    }       
+    sum += array[i];
   }
+
   let total = Math.round(sum / array.length);
-  return total
+  return total;
 };
 
 module.exports = average;
