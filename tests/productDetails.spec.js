@@ -44,5 +44,6 @@ describe('6 - Implemente os casos de teste para a função productDetails', () =
     // Teste se os dois productIds terminam com 123.
     expect(obj1.details.productId.endsWith('123')).toBe(true);
     expect(obj2.details.productId.endsWith('123')).toBe(true);
+
   });
 });
