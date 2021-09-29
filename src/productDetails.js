@@ -39,4 +39,6 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+console.log(productDetails('Arthur','Arthur')[0].details.productId !== productDetails('Arthur','Arthur')[1].details.productId);
+
 module.exports = productDetails;
