@@ -9,9 +9,28 @@
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
+    ,0
+    ,0                                                                                                                                                                                                                                                                   
     - average([1, '2']) // Retorno: undefined;
 */
+// const arrNum = [1, 2, 3, 4, 5];
+const red = (a, b) => a + b;
+const mdedia = (arr) => { const md = Math.round(arr.reduce(red) / arr.length); return md; };
+const average = (arr) => (arr.every((e) => typeof e === 'number') ? mdedia(arr) : undefined);
 
-const average = () => {};
+// const average = (arrNum) => {
+//   let sum = 0;
+//   if (arrNum.length === 0) return undefined;
+//   arrNum.forEach((num) => {
+//     if (typeof num === 'number') {
+//       sum += num;
+//     } else {
+//       return undefined;
+//     }
+//   });
+//   return Math.round(sum / arrNum.length);
+// };
+
+console.log(average([1, 2, '3']));
 
 module.exports = average;
