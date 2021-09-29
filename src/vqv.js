@@ -17,8 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  // https://www.codegrepper.com/code-examples/javascript/javascript+check+if+argument+is+passed
-  if (nome === undefined || idade === undefined) return undefined;
+  if (!nome || !idade) return undefined;
   return `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
