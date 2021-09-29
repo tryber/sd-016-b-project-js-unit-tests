@@ -29,6 +29,7 @@ const average = (numberArr) => {
     sum += numberArr[i];
   }
   med = Math.round(sum / numberArr.length);
+  
   return med;
 };
 
