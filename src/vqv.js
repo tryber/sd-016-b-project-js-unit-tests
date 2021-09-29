@@ -29,9 +29,3 @@ trabalho na Trybe e mando muito em programação!
 };
 
 module.exports = vqv;
-
-// const vqv = (string, data) => {
-//   return (`Oi, meu nome é ${string}!\nTenho ${data} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`);
-// };
-
-// module.exports = vqv;
