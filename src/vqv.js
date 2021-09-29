@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (s, n) => {
+  let a = null;
+  let answer = null;
+  if (s === undefined || n === undefined) {
+    answer = undefined;
+  } else {
+    a = `Oi, meu nome é ${s}!\nTenho ${n} anos,`;
+    answer = `${a}\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
+  }
+  return answer;
+};
 
 module.exports = vqv;
