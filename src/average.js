@@ -12,10 +12,15 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+const hasOnlyNumbers = (arr) => arr.every((val) => typeof val === 'number');
+
+const isEmpty = (arr) => arr.length === 0;
+
+const sumAllValues = (arr) => arr.reduce((acc, curr) => acc + curr, 0);
+
 const average = (arr) => {
-  if (arr.some((val) => typeof val !== 'number')) return;
-  if (arr.length === 0) return;
-  return Math.round(arr.reduce((acc, curr) => acc + curr, 0) / arr.length);
+  if (!hasOnlyNumbers(arr) || isEmpty(arr)) return;
+  return Math.round(sumAllValues(arr) / arr.length);
 };
 
 module.exports = average;
