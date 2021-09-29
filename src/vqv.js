@@ -16,6 +16,12 @@
       #VQV!'
 */
 
-const vqv = () => {};
-
+const vqv = (st, nu) => {
+  if (typeof st === 'undefined' && typeof nu === 'undefined') return undefined;
+  const msg = `Oi, meu nome é ${st}!
+Tenho ${nu} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  return msg;
+};
 module.exports = vqv;
