@@ -85,7 +85,7 @@ const createMenu = () => {
       const temp = {
       food: {},
       drink: {},
-    }
+    };
     return temp;
     },
   };
