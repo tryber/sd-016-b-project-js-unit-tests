@@ -19,10 +19,7 @@
 const vqv = (name, age) => {
   if (name === '' || age === '') return undefined;
 
-  const phrase = `Oi, meu nome é ${name}!
-  Tenho ${age} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`;
+  const phrase = `Oi, meu nome é ${name}!\nTenho ${age} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
 
   if (typeof (name) === 'string' && typeof (age) === 'number') return phrase;
 };
