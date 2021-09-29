@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (string, number) => {
+  if (typeof (string) === 'undefined' || typeof (number) === 'undefined') {
+    return undefined;
+  }
+    const line1 = `Oi, meu nome é ${string}!\n`;
+    const line2 = `Tenho ${number} anos,\n`;
+    const line3 = 'trabalho na Trybe e mando muito em programação!\n';
+    const line4 = '#VQV!';
+    const paragrafo = `${line1}${line2}${line3}${line4}`;
+    return paragrafo;
+};
 
 module.exports = vqv;
