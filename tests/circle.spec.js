@@ -27,10 +27,10 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     expect(circle('a')).toBeUndefined()
     expect(circle(1)).toMatchObject({radius: 1, area: 3.14, circumference: 6.28})
-    expect(circle(1)).toHaveproperty('radius','area','circumference');
-    expect(circle(2)).toBeMatChObject({circumference: 12.56});  
+    expect(circle(1)).toHaveProperty('radius','area','circumference');
+    expect(circle(2)).toMatchObject({circumference: 12.56});  
     expect(circle(3).area).toBeCloseTo(28.26);
-    expect(circle(3)).toBeMatChObject({radius: 3, circumference: 18.84});
+    expect(circle(3)).toMatchObject({radius: 3, circumference: 18.84});
   });
 });
 
