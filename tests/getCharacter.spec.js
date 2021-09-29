@@ -24,9 +24,7 @@ Melissandre |   Melissandre   | Necromancer | 'Death By Fire Is The Purest Death
 }
 
 - OBS.: O parâmetro não é CASE SENSITIVE, portanto Arya, ArYa e ARYA tem o mesmo resultado.
-
 Elabore testes para verificar se a função está funcionando de acordo com o proposto.
-
 Parâmetros:
   - Uma string.
 
@@ -43,13 +41,17 @@ Retorno:
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    fail('Teste vazio!');
+    expect(getCharacter()).toBeUndefined();
+    expect(getCharacter('Arya')).toHaveProperty('name', 'Arya Stark', 'class', 'Rogue', 'Phrases', [ 'Not today', 'A girl has no name.' ]);
+    expect(getCharacter('Brienne')).toHaveProperty('name', 'Brienne Tarth', 'class', 'Knight', 'phrases', ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.']);
+    expect(getCharacter('melissandre')).toHaveProperty('name', 'Melissandre', 'class', 'Necromancer', 'phrases', ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']);
+    expect(getCharacter('Jon Snow')).toBeUndefined();
     // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.x
+    // Teste se a função retorna o objeto correto para o parâmetro 'Arya',x
+    // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',x
+    // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',x
     // Teste se os parâmetros não são Case Sensitive.
-    // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+    // Teste se ao passar um nome que não está na tabela, a função retorna undefined.x
   });
 });
