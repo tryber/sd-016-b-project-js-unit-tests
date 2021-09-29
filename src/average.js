@@ -13,7 +13,7 @@
 */
 
 const average = () => {
-  
+  // seu código aqui.
 };
 
 module.exports = average;
