@@ -16,8 +16,8 @@ const average = (numberArr) => {
   // add your implementation here
   // https://www.horadecodar.com.br/2021/01/18/como-somar-elementos-de-um-array-de-maneira-performaica/
   let sum = 0;
-  let med = 0;
-
+  // let med = 0;  >>> refatorado
+  
   if (numberArr.length === 0) { 
     return undefined;
   }
@@ -28,9 +28,9 @@ const average = (numberArr) => {
     }
     sum += numberArr[i];
   }
-  med = Math.round(sum / numberArr.length);
+  // let med = Math.round(sum / numberArr.length); >>> aplicado diretamente no return
   
-  return med;
+  return Math.round(sum / numberArr.length);
 };
 
 module.exports = average;
