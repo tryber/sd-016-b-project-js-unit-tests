@@ -30,13 +30,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     const productTest = productDetails('Alcool gel', 'Máscara');
-    console.log(productTest);
 
     // Teste se productDetails é uma função.
     expect(typeof(productDetails)).toEqual('function');
 
     // Teste se o retorno da função é um array.
-    //expect(productTest).toEqual();
+    expect(Array.isArray(productTest)).toEqual(true);
 
     // Teste se o array retornado pela função contém dois itens dentro.
     expect(productTest.length).toEqual(2);
