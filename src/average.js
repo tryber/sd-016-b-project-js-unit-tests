@@ -11,7 +11,7 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-// Feito com ajuda do grupo 
+
 const average = (array) => {
   let result = 0;
   if (array.length === 0) {
