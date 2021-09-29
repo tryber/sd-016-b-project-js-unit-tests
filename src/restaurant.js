@@ -81,7 +81,13 @@
 
 const createMenu = () => {
   const menu = {
-    fetchMenu: () => {},
+    fetchMenu: () => {
+      const temp = {
+      food: {},
+      drink: {},
+    }
+    return temp;
+    },
   };
 
   return menu;
