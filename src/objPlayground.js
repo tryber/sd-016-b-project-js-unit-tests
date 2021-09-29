@@ -10,13 +10,11 @@
     - div: retorna o resultado da divisão dos dois números;
     - sub: retorna o resultado da subtração dos dois números.
   Os resultados das divisões devem sempre ser arredondados para baixo.
-  
   Parâmetros:
   - Dois números inteiros.
 
   Comportamento:
   calculator(1, 2); // { sum: 3, mult: 2, div: 1, sub: 0 }
-  
   Depois de ter implementado a função calculator, desenvolva uma função que converta objetos em arrays, de chaves, valores ou ambos.
   A sua função deve receber dois parâmetros:
 
@@ -33,16 +31,14 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {
-  return {
+const calculator = (number1, number2) => (
+  {
     sum: number1 + number2,
     mult: number1 * number2,
     div: Math.floor(number1 / number2),
-    sub: number1 - number2
+    sub: number1 - number2,
   }
-};
-
-const object = calculator();
+);
 
 const arrayGenerator = (type, object) => {
   if (type === 'keys') {
@@ -54,4 +50,5 @@ const arrayGenerator = (type, object) => {
   }
 };
 
+let object = calculator();
 module.exports = { calculator, arrayGenerator };
