@@ -79,18 +79,21 @@
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {
-  const menu = {
+const createMenu = (...obj) => {
+  return {
     fetchMenu: () => {
-      const temp = {
-      food: {},
-      drink: {},
-    };
-    return temp;
+      return obj[0] !== undefined
+      ? {food: obj[0].food, drink: obj[0].drink,}
+      : {food: {}, drink: {},};
     },
   };
 
-  return menu;
+  // return myDrinks
 };
+
+const objTest = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+
+console.log(createMenu().fetchMenu());
+// console.log(createMenu(objTest));
 
 module.exports = createMenu;
