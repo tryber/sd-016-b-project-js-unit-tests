@@ -17,7 +17,7 @@
 */
 
 const vqv = (string, number) => {
-  if (string.length === 0 || number.length === 0) {
+  if (!string || !number) {
     return undefined;
   } 
   return `Oi, meu nome é ${string}!
