@@ -17,12 +17,12 @@ const average = (array) => {
   if (array.length === 0) {
     return undefined;
   }
-  for (let index = 0; index < array.length; index += 1) {
+  for (let i = 0; i < array.length; i += 1) {
     // ref: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/typeof
-    if (typeof array[index] !== 'number') {
+    if (typeof array[i] !== 'number') {
       return undefined;
     }
-    sum += array[index];
+    sum += array[i];
   }
   // ref: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
   return Math.round(sum / array.length);
