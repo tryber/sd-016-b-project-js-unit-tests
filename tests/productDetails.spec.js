@@ -28,13 +28,31 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
+    const expected = expect.stringMatching(/123$/);
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
+    expect(typeof productDetails).toBe('function');
     // Teste se o retorno da função é um array.
+    expect(productDetails()).toBeInstanceOf(Array);
     // Teste se o array retornado pela função contém dois itens dentro.
-    // Teste se os dois itens dentro do array retornado pela função são objetos.
+    expect(productDetails('Alcool gel', 'Máscara')).toHaveLength(2);
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // Teste se os dois productIds terminam com 123.
+    expect(productDetails('Alcool gel', 'Máscara')).not.toBe(
+      productDetails('Máscara', 'Alcool gel')
+    );
+  });
+  // Teste se os dois itens dentro do array retornado pela função são objetos.
+  it('teste se os dois itens são objetos', () => {
+    expect(productDetails('Alcool gel', 'Máscara')[0]).toBeInstanceOf(Object);
+    expect(productDetails('Alcool gel', 'Máscara')[1]).toBeInstanceOf(Object);
+  });
+  // Teste se os dois productIds terminam com 123.
+  it('teste para ver se os itens terminam com 123', () => {
+    expect(
+      productDetails('Alcool gel', 'Máscara')[0].details.productId
+    ).toMatch(/123$/);
+    expect(
+      productDetails('Alcool gel', 'Máscara')[1].details.productId
+    ).toMatch(/123$/);
   });
 });
