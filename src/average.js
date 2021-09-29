@@ -12,8 +12,24 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
+const average = (numberArr) => {
   // add your implementation here
+  // https://www.horadecodar.com.br/2021/01/18/como-somar-elementos-de-um-array-de-maneira-performaica/
+  let sum = 0;
+  let med = 0;
+
+  if (numberArr.length === 0) { 
+    return undefined;
+  }
+
+  for (let i = 0; i < numberArr.length; i += 1) {
+    if (typeof numberArr[i] !== 'number') {
+      return undefined;
+    }
+    sum += numberArr[i];
+  }
+  med = Math.round(sum / numberArr.length);
+  return med;
 };
 
 module.exports = average;
