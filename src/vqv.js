@@ -29,6 +29,4 @@ trabalho na Trybe e mando muito em programação!
  return sentence;
 };
 
-console.log(vqv('Matheus', 30))
-
 module.exports = vqv;

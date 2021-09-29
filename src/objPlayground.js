@@ -35,16 +35,16 @@
 
 const calculator = (number1, number2) => (
  {
-  sum: Math.floor(parseInt(number1 + number2)),
-  mult: Math.floor(parseInt(number1 * number2)),
-  div: Math.floor(parseInt(number1 / number2)),
-  sub: Math.floor(parseInt(number1 - number2))
+  sum: Math.floor(parseInt(number1 + number2), 10),
+  mult: Math.floor(parseInt(number1 * number2), 10),
+  div: Math.floor(parseInt(number1 / number2), 10),
+  sub: Math.floor(parseInt(number1 - number2), 10),
  }
 );
 
 const arrayGenerator = (type, object) => {
-  if (type == 'keys') return Object.keys(object);
-  if (type == 'values') return Object.values(object);
-  if (type == 'entries') return Object.entries(object);
+  if (type === 'keys') return Object.keys(object);
+  if (type === 'values') return Object.values(object);
+  if (type === 'entries') return Object.entries(object);
 }
 module.exports = { calculator, arrayGenerator };
