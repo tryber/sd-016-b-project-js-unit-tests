@@ -13,22 +13,20 @@
 */
 
 const average = (arr) => {
-let somaArr= 0;
-let mediaArr =0;
+let somaArr = 0;
+let mediaArr = 0;
 
-if ( arr.length <= 0) {
+if (arr.length <= 0) {
   return undefined;
 }
-for (let index = 0; index < arr.length; index +=1) {
+for (let index = 0; index < arr.length; index += 1) {
   if (typeof arr[index] !== 'number') {
     return undefined;
   }
   somaArr += arr[index];
 }
-mediaArr = somaArr / arr.length
-return Math.round(mediaArr)
+mediaArr = somaArr / arr.length;
+return Math.round(mediaArr);
 };
-
-
 
 module.exports = average;
