@@ -15,19 +15,17 @@
 const average = (arr) => {
   if (arr.length === 0) {
     return undefined;
-  } else {
+  }
   let somaArr = 0; 
     for (let index = 0; index < arr.length; index += 1) {
       if (typeof arr[index] !== 'number') {
       return undefined;
-      } else {
+      }
         somaArr += arr[index]; 
-      };
     };
-    let media = Math.round(somaArr/arr.length);
+    let media = Math.round(somaArr / arr.length);
     console.log(somaArr);
     return media; 
-  };
-};
+}
 
 module.exports = average;
