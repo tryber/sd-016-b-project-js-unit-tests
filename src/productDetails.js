@@ -39,4 +39,10 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+let obj1 = productDetails('Alcool gel', 'Máscara')[0]
+let obj2 = productDetails('Alcool gel', 'Máscara')[1]
+obj1 = Object.values(obj1)[1]
+obj1 = Object.values(obj1)[0]
+console.log(obj1.endsWith('123'));
+
 module.exports = productDetails;
