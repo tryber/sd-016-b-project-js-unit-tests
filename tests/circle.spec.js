@@ -47,6 +47,4 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste se o objeto retornado tem 3 propriedades.
     expect(Object.keys(circle(1)).length).toBe(3)
   })
-
-
 });
