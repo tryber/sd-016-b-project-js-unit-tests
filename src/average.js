@@ -13,19 +13,14 @@
 */
 
 const average = (array) => {
-  // If it's not an array or its empty
-  if (!Array.isArray(array) || array.length === 0) {
-    return 'undefined';
-  }
-  // Otherwise, return this
-  let soma = 0;
-  let media = 0;
-  for (let i = 0; i < array.length; i += 1) {
-    soma += array[i];
-    media = Math.round(soma / array.length);
-    return media;
-  }
+  if (array.length === 0) return undefined;
+    let soma = 0;
+    for (let i = 0; i < array.length; i += 1) {
+      if (typeof array[i] !== 'number') return undefined; 
+        soma += array[i];
+      }
+    return Math.round(soma / array.length);  
 };
-console.log(average([1, 2]));
+console.log(average([2, 6]));
 
-module.exports = average;
+module.exports = average; 
