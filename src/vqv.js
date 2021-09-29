@@ -23,7 +23,8 @@ const vqv = (nome, idade) => {
   }
 
   let tex = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,
-   trabalho na Trybe e mando muito em programação! #VQV!`;
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
 
   return tex;
 };
