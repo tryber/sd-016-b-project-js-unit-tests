@@ -6,13 +6,25 @@
 
   Parâmetros:
     - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
-    
+
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (arr) => {
+  let total = 0;
+  if (arr.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof(arr[i]) === 'string') {
+      return undefined;
+    } 
+    total += arr[i];
+  }
+  return Math.round(total / (arr.length));
+};
 
 module.exports = average;
