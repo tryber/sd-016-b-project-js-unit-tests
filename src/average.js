@@ -14,28 +14,27 @@
 
 const checkPar = (arr) => {
   let check = true;
-  for(let index = 0; index<=arr.length; index += 1) {
-    if(typeof(arr[index]) != 'number') {
+  for (let index = 0; index <= arr.length; index += 1) {
+    if (typeof (arr[index]) !== 'number') {
       check = false;
       break;
     }
   }
   return check;
-}
+};
 
 const average = (arr) => {
   let mediaSomaAll = 0;
-  if(checkPar(arr)){
-    let somaAll = 0
-    for(let index = 0; index < arr.length; index += 1) {
+  if (checkPar(arr)) {
+    let somaAll = 0;
+    for (let index = 0; index < arr.length; index += 1) {
       somaAll += arr[index];
     }
-    mediaSomaAll = Math.round(somaAll/arr.length);
-  }else {
+    mediaSomaAll = Math.round(somaAll / arr.length);
+  } else {
     mediaSomaAll = 'undefined';
   }
   return mediaSomaAll;
-}
-
+};
 
 module.exports = average;
