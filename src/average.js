@@ -22,10 +22,10 @@ const average = (arr) => {
       return undefined;
       }
         somaArr += arr[index]; 
-    };
+    }
     let media = Math.round(somaArr / arr.length);
     console.log(somaArr);
     return media; 
-}
+};
 
 module.exports = average;
