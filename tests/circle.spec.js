@@ -45,4 +45,5 @@ describe('4 - Implemente a função `circle` e', () => {
   it('verifica se a função retorna os dados corretos de um círculo de raio 3', () => {
     expect(circle(3)).toMatchObject({radius: 3, area: 28.259999999999998, circumference: 18.84});
   });
+
 });
