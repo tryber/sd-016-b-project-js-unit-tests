@@ -19,11 +19,11 @@
 const vqv = (string, number) => {
   if (string.length === 0 && number.length === 0) {
     return undefined;
-  } else{
+  } 
     let retorno = console.log(`Oi, meu nome é ${string}!
     Tenho ${number} anos,
     trabalho na Trybe e mando muito em programação!
-    #VQV!`)
+    #VQV!`);
     return retorno;
 };
 
