@@ -39,8 +39,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(productDetails('Alcool gel', 'Máscara')[0]).toBeInstanceOf(Object);
     expect(productDetails('Alcool gel', 'Máscara')[1]).toBeInstanceOf(Object);
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // expect(productDetails(string !== string2)).
-    
+    expect(productDetails('Alcool gel', 'Máscara')[0]).not.toMatchObject(productDetails('Alcool gel', 'Máscara')[1]);
     // Teste se os dois productIds terminam com 123.
+    const firstProduct = productDetails('Alcool gel', 'Máscara')[0].details.productId;
+    const secondProduct = productDetails('Alcool gel', 'Máscara')[1].details.productId;
+
+    expect(firstProduct.slice(firstProduct.length - 3) === '123' && secondProduct.slice(secondProduct.length - 3) === '123');
   });
 });
+
+// Slice pega inicio da array e -3 (tirar os 3 últimos elementos que são o 123 que queremos verificar) - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
