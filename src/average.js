@@ -12,8 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  let commit = true;
+
+const average = (numbers) => {
+  let sum = 0;
+  if (numbers.length === 0) {
+    return undefined;
+  }
+  for (const i of numbers) {
+    if (typeof i !== 'number') {
+      return undefined;
+    }
+    sum += i;
+  }
+  return Math.round(sum / numbers.length);
 };
+
+// Referência - https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
 
 module.exports = average;
