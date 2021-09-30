@@ -48,13 +48,11 @@
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 //
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 //
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
@@ -78,7 +76,23 @@
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-
-const createMenu = () => {};
+const createMenu = (object) => ({
+  fetchMenu: () => object,
+  consumption: [],
+  order(item) { this.consumption.push(item); }, // Usei como referência o código do amigo Gabriel Rodrigues, havia feito como order: () => {this.consumption.push(item)} - mas a mesma não funcionou // Pelo que entendi nos docs, this faz com que o escopo atual seja respeitado naquela chamada
+  pay() {
+    let sum = 0;
+    for (let i = 0; i < this.consumption.length; i += 1) {
+      if (Object.keys(this.fetchMenu().food).includes(this.consumption[i])) {
+        sum += this.fetchMenu().food[this.consumption[i]]; // Referência ao Gabriel Rodrigues novamente, entendi todo o funcionamento da função. Apenas fiquei em dúvida do porque da arrow function não funcionar após o pay()
+      } else sum += this.fetchMenu().drink[this.consumption[i]];
+    }
+    return sum;
+  },
+});
+// const teste = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9 }});
+// teste.order('coxinha');
+// teste.order('agua')
+// console.log(teste.pay());
 
 module.exports = createMenu;
