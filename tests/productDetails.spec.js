@@ -34,6 +34,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se o retorno da função é um array.
     // https://jestjs.io/pt-BR/docs/expect#tobeinstanceofclass
     expect(productDetails('a', 'b')).toBeInstanceOf(Array); 
+    expect(Array.isArray(productDetails())).toBe(true); 
     // Teste se o array retornado pela função contém dois itens dentro.
     expect(productDetails('a', 'b').length).toBe(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.

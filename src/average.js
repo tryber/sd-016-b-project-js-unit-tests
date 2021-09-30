@@ -16,16 +16,16 @@ const average = (arr) => {
   if (arr.length === 0) {
     return undefined;
   }
+
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] !== 'number') {
       return undefined;
     }
-    sumIndex = sumIndex + arr[i];
+    sumIndex += arr[i];
   }
   // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
   // A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo.
-  return Math.round(sumIndex / arr.length)
+  return Math.round(sumIndex / arr.length);
 };
 
 module.exports = average;
-
