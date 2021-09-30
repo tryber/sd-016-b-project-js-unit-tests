@@ -91,6 +91,7 @@ const createMenu = (object) => {
     
     for (let index = 0; index < arrayConsumption.length; index += 1) {
       const item = arrayConsumption[index];
+      
       if (item in object.food) {
         total += object.food[item];
       } else if (item in object.drink) {
