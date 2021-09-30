@@ -31,7 +31,7 @@ describe('4 - Implemente a função `circle` e', () => {
     expect(typeof circle(2)).toBe('object');
   });
   it('verifica se a função retorna 3 propriedades', () => {
-    expect(circle(3)).toStrictEqual({radius: Number, area: Number, circumference: Number});
+    expect(Object.values(circle(3)).length).toStrictEqual(3);
   });
   it('verifica se a função retorna undefined, quando não recebe nenhum parâmetro', () => {
     expect(circle()).toBe(undefined);
