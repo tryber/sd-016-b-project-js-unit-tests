@@ -130,7 +130,16 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    menu = createMenu({ food: {}, drink: {} });
+    menu = createMenu({
+      food: {
+        coxinha: 4.00,
+        sashimi: 5.00,
+      },
+      drink: {
+        agua: 2.00,
+        coca: 4.00,
+      },
+    });
     menu.order('coxinha');
     menu.order('agua');
     menu.order('coxinha');
