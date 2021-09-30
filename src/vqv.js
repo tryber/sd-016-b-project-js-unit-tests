@@ -15,10 +15,10 @@
       trabalho na Trybe e mando muito em programação!
       #VQV!'
 */
-const str1 = 'Oi, meu nome é';
+const s = 'Oi, meu nome é';
 
-const str2 = 'anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!';
+const t = 'anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!';
 
-const vqv = (nome, idade) => ((!nome && !idade) ? undefined : `${str1} ${nome}!\nTenho ${idade} ${str2}`);
+const vqv = (nome, idade) => ((!nome && !idade) ? undefined : `${s} ${nome}!\nTenho ${idade} ${t}`);
 
 module.exports = vqv;
