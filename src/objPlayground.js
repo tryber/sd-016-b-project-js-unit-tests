@@ -33,8 +33,18 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
+const calculator = (number1, number2) => {
+  const object = {
+    sum: number1 + number2,
+    mult: number1 * number2,
+    div: Math.trunc(number1 / number2),
+    sub: number1 - number2,
+  };
+  return object;
+};
 
-const arrayGenerator = (type, object) => {};
+const arrayGenerator = (type, object) => Object[type](object);
+
+console.log(arrayGenerator('entries', calculator(1, 2)));
 
 module.exports = { calculator, arrayGenerator };
