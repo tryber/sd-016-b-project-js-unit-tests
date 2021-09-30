@@ -50,7 +50,4 @@ const arrayGenerator = (type, object) => {
   return newArr;
 };
 
-// console.log(calculator(5, 2));
-// console.log(arrayGenerator('entries', { sum: -5, mult: -50, div: -2, sub: -15 }));
-
 module.exports = { calculator, arrayGenerator };
