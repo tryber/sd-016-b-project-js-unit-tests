@@ -82,17 +82,19 @@
 const createMenu = (obj) => {
   const menu = {};
   const orderFromMenu = (request) => menu.consumption.push(request);
+  const payAll = () => {
+    let sum = 0;
+    menu.consumption.forEach((item) => {
+      if (Object.keys(obj.food).includes(item)) sum += obj.food[item];
+      if (Object.keys(obj.drink).includes(item)) sum += obj.drink[item];
+    });
+    return sum;
+  };
+
   menu.fetchMenu = () => obj;
   menu.consumption = [];
   menu.order = orderFromMenu;
-  menu.pay = () => {
-    let sum = 0;
-    for (let item of menu.consumption) {
-      if (Object.keys(obj.food).includes(item)) sum += obj.food[item];
-      if (Object.keys(obj.drink).includes(item)) sum += obj.drink[item];
-    }
-    return sum;
-  };
+  menu.pay = payAll;
   return menu;
 };
 
