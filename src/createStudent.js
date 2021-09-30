@@ -23,4 +23,6 @@ const createStudent = (nome) => {
   return objetoVazio;
 };
 
+console.log(createStudent('Victor'));
+
 module.exports = createStudent;
