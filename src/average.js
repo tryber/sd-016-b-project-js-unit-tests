@@ -15,13 +15,14 @@
 const average = (array) => {
 let somatorio = 0;
 let media = 0;
+let numeros = 0;
 for (let index = 0; index < array.length; index += 1) {
   if (array.length === 0 || typeof array[index] !== 'number') { return undefined; }
-
-  const numeros = array[index];
-  somatorio += numeros;
+  numeros = array[index]; 
+   somatorio += numeros;
  }
+
  media = Math.round(somatorio / array.length);
 };
-average([]);
+
 module.exports = average;
