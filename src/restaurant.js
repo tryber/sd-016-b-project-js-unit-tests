@@ -79,6 +79,40 @@
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// Criei o obj restaurant separado para que consiga ser usado por todas as funções
+const restaurant = {};
+
+const createMenu = (object) => {
+  restaurant.fetchMenu = () => object;
+  restaurant.consumption = [];
+  restaurant.pay = () => {
+    const arrayConsumption = restaurant.consumption;
+    let total = 0;
+    
+    for (let index = 0; index < arrayConsumption.length; index += 1) {
+      const item = arrayConsumption[index];
+      
+      if (item in object.food) {
+        total += object.food[item];
+      } else if (item in object.drink) {
+        total += object.drink[item];
+      }
+    }
+
+    const valorPercentual = ((10 / 100) * total);
+    return total + valorPercentual;
+  };
+
+  return restaurant;
+};
+
+const orderFromMenu = (request) => {
+  restaurant.consumption.push(request);
+};
+
+// Adiciono a propriedade order ao objeto restaurante.
+restaurant.order = orderFromMenu;
 
 module.exports = createMenu;
+
+// Credits: A expressão "in" foi baseada no exemplo que se emcontra no seguinte link: https://qastack.com.br/programming/1098040/checking-if-a-key-exists-in-a-javascript-object
