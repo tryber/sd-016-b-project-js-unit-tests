@@ -21,15 +21,13 @@ const average = (array) => {
   }    
     
   for (let index = 0; index < array.length; index += 1) {      
-      
-    if (typeof(array[index]) === 'string') {
+    if (typeof (array[index]) === 'string') {
       return undefined;
-    } else {
-      soma += array[index];
-      contador += 1;
-    }    
+    } 
+    soma += array[index];
+    contador += 1;
   }
-  return Math.round(soma/contador);
+  return Math.round(soma / contador);
 }; 
 
 console.log(average([1, 2, 5]));
