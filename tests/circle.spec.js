@@ -26,11 +26,11 @@ const circle = require('../src/circle');
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
-    expect(circle('4')).toBeundefined();
+    expect(circle('4')).toBeUndefined();
   });
   // Teste se circle retorna um objeto.
   it('Teste se circle retorna um objeto', () => {
-    expect(typeof circle()).toBe(Object);
+    expect(typeof circle(3)).toBe('object');
   });
     // Teste se o objeto retornado tem 3 propriedades.
   it('Teste se o objeto retornado tem 3 propriedades', () => {
