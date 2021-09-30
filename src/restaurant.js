@@ -57,8 +57,7 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
-// adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
+// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
 // DICA: para criar isso, você pode: 
 // - Definir a função `createMenu()`
 // - Definir o objeto que a `createMenu()` retorna, mas separadamente 
@@ -75,10 +74,32 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
-// que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
+// PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const restaurant = {};
+
+function orderFromMenu(request) { restaurant.consumption.push(request); }
+
+function closeTheAccount(consumption, menu) {
+  let price = 0;
+  for (let i = 0; i < consumption.length; i += 1) {
+    const order = consumption[i];
+    if (typeof menu.food[order] === 'number') { price += menu.food[order]; }
+    if (typeof menu.drinks[order] === 'number') { price += menu.drinks[order]; }
+  }
+  const roundedPrice = Math.round(price * 100) / 100;
+
+  return roundedPrice;
+}
+
+const createMenu = (menu) => {
+  restaurant.fetchMenu = () => menu;
+  restaurant.consumption = [];
+  restaurant.order = (request) => orderFromMenu(request);
+  restaurant.pay = () => closeTheAccount(restaurant.consumption, menu);
+ 
+  return restaurant;
+};
 
 module.exports = createMenu;
