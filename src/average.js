@@ -12,18 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (arrayNumeros) => {
-  const totalNumbers = arrayNumeros.length;
+const average = (numbersArray) => {
+  const totalNumbers = numbersArray.length;
   let sum = 0;
 
-  if (arrayNumeros.length < 1) {
+  if (numbersArray.length < 1) {
     return undefined;
   }
 
-  for (let number of arrayNumeros) {
+  for (let number of numbersArray) {
     if (typeof (number) === 'string') {
       return undefined;
     }
+
     sum += number;
   }
 
