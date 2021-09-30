@@ -34,7 +34,6 @@
 */
 
 const calculator = (number1, number2) => {
-
   let object = {
     sum: number1 + number2,
     sub: number1 - number2,
