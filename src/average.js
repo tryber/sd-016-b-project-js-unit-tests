@@ -13,24 +13,19 @@
     ,0                                                                                                                                                                                                                                                                   
     - average([1, '2']) // Retorno: undefined;
 */
-// const arrNum = [1, 2, 3, 4, 5];
-const red = (a, b) => a + b;
-const mdedia = (arr) => { const md = Math.round(arr.reduce(red) / arr.length); return md; };
-const average = (arr) => (arr.every((e) => typeof e === 'number') ? mdedia(arr) : undefined);
+
+const red = (a, b) => a + b; let soma = 0;
+
+const mdedia = (arr) => { const md = Math.round(arr.reduce(red, soma) / arr.length); return md; };
+
+const average = (a) => (a.length && a.every((e) => typeof e === 'number') ? mdedia(a) : undefined);
 
 // const average = (arrNum) => {
-//   let sum = 0;
-//   if (arrNum.length === 0) return undefined;
-//   arrNum.forEach((num) => {
-//     if (typeof num === 'number') {
-//       sum += num;
-//     } else {
-//       return undefined;
-//     }
-//   });
-//   return Math.round(sum / arrNum.length);
+  // if (arrNum.length && typeof arrNum === 'number') {
+//     return Math.round(arrNum.reduce((a, b) => a + b / arrNum.length));
+//   }
+//   return undefined;
 // };
 
-console.log(average([1, 2, '3']));
-
+console.log(average([1, 2, 3, 4, 5]));
 module.exports = average;
