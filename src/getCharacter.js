@@ -63,9 +63,11 @@ const getCharacter = (name) => {
 
   if (characters[lowered]) {
     return characters[lowered];
+    // console.log(characters[lowered]);
   }
 
   return undefined;
 };
 
 module.exports = getCharacter;
+// getCharacter('Arya');
