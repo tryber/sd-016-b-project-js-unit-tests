@@ -31,5 +31,4 @@ const circle = (radius) => {
   };
 };
 
-circle(3);
 module.exports = circle;
