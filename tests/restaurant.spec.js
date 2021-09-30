@@ -74,7 +74,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
-    const menu = createMenu({ food: {}, drink: {} });
+    let menu = createMenu({ food: {}, drink: {} });
     expect(menu.consumption).toStrictEqual([]);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
-    const menu = createMenu({ food: {}, drink: {} });
+    menu = createMenu({ food: {}, drink: {} });
     menu.order('coxinha');
     expect(menu.consumption).toStrictEqual(['coxinha']);
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
