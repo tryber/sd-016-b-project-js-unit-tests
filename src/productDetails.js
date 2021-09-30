@@ -38,5 +38,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
+console.log(productDetails('gab', 'fuentes'));
 module.exports = productDetails;
