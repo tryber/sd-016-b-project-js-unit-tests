@@ -24,5 +24,5 @@ const average = (parametros) => {
   }
   return Math.round(count / tamanhoDoArray);
 };
-console.log(average([1, '2']));
+// console.log(average([1, '2']));
 module.exports = average;

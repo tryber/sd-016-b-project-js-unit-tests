@@ -32,7 +32,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste se circle retorna um objeto.
     expect(typeof(circle(10))).toEqual('object');
     // Teste se o objeto retornado tem 3 propriedades.
-    expect(circle(10)).toMatchObject({ radius: 10, area: 314, circumference: 62.800000000000004 });
+    // expect(circle(10)).toMatchObject({ radius: 10, area: 314, circumference: 62.800000000000004 });
+    expect(Object.entries(circle(10)).length).toBe(3);
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     expect(circle()).toBeUndefined();
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
