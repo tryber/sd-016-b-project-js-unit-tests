@@ -47,6 +47,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(objeto).not.toEqual(objeto2);
   });
   it('Teste se os dois productIds terminam com 123.', () => {
+    // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
     const [objeto, objeto2] = productDetails('a', 'b');
     expect(objeto.details.productId.endsWith('123')).toBe(true);
     expect(objeto2.details.productId.endsWith('123')).toBe(true);
