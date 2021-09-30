@@ -57,28 +57,105 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
+// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro,
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
-// DICA: para criar isso, você pode: 
+// DICA: para criar isso, você pode:
 // - Definir a função `createMenu()`
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
+// - Definir o objeto que a `createMenu()` retorna, mas separadamente
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
 // const restaurant = {}
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
+// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
 
+// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
+//
+let sum = 0;
+const sumItens = (i2, fdar, cons) => {
+  for (let i = 0; i < fdar.length; i += 1) {
+    if (cons[i2] === fdar[i][0]) {
+      sum += fdar[i][1];
+    }
+  }
+};
+
+const catchPrices = (cons, foods, drinks) => {
+  sum = 0;
+  const foodArr = Object.entries(foods);
+  const drinkArr = Object.entries(drinks);
+  const foodsAndDrinks = foodArr.concat(drinkArr);
+
+  for (let i2 = 0; i2 < cons.length; i2 += 1) {
+    sumItens(i2, foodsAndDrinks, cons);
+  }
+  return sum + sum * 0.1;
+};
+
+const createMenu = (objFD) => {
+  const obj = {
+    fetchMenu: () => objFD,
+    consumption: [],
+  };
+
+  const orderFromMenu = (rqst) => obj.consumption.push(rqst);
+  obj.order = orderFromMenu;
+
+  const sumTotal = () => {
+    const foodsObj = Object.entries(obj.fetchMenu())[0][1];
+    const drinksObj = Object.entries(obj.fetchMenu())[1][1];
+    const consArr = obj.consumption;
+    return catchPrices(consArr, foodsObj, drinksObj);
+  };
+  obj.pay = sumTotal;
+  return obj;
+};
+
+// pegar os itens do array consumption e ver se tem igual à chave no fetchMenu, os pegar os itens que correspondem e pegar o price
+
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// testes
+// function CreateMenu2(obj) {
+//   this.fetchMenu = () => obj;
+//   this.consumption = [];
+//   this.order = orderFromMenu;
+// }
 
+// const objetoRetornado = createMenu({
+//   food: { coxinha: 3.9, sanduiche: 9.9 },
+//   drinks: { agua: 3.9, cerveja: 6.9 },
+// });
+
+// objetoRetornado.order('coxinha');
+// objetoRetornado.order('agua');
+// objetoRetornado.order('coxinha');
+
+// console.log(Object.entries(foodsArr[1]));
+// const drinksObj = Object.entries(objetoRetornado.fetchMenu())[1][1];
+// console.log(objetoRetornado.pay());
+// console.log(drinksObj);
+
+// console.log(objetoRetornado);
+// console.log(obj.fetchMenu());
+// const teste = meuRestaurante.order('aviao');
+// console.log(meuRestaurante.fetchMenu());
+// meuRestaurante.order('aviao');
+// console.log(meuRestaurante);
+// passo3
+
+// const objetoRetornado = createMenu({
+//   food: { coxinha: 3.9, sanduiche: 9.9 },
+//   drinks: { agua: 3.9, cerveja: 6.9 },
+// });
+
+// console.log(objetoRetornado.fetchMenu());
 module.exports = createMenu;
