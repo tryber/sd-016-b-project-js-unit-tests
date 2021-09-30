@@ -17,14 +17,16 @@ const average = (numbers) => {
   if (numbers.length === 0) {
     return undefined;
   }
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (typeof numbers[i] !== 'number') {
+  for (const i of numbers) {
+    if (typeof i !== 'number') {
       return undefined;
     }
     sum += i;
   }
   return Math.round(sum / numbers.length);
 };
+
+console.log(average([2, 10]));
 
 // Referência Linha 21 - https://mkyong.com/javascript/check-if-variable-is-a-number-in-javascript/
 

@@ -39,5 +39,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     expect(circle(3)).toBe(18.84);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    expect(circle(3)).toHaveProperty('radius', 3);
+    expect(circle(3)).toHaveProperty('circumference', 18.84);
   });
 });
