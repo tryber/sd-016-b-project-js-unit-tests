@@ -3,7 +3,8 @@
 /*
   Use template literals para escrever uma função que,
   recebe seu nome e sua idade e retorna o parágrafo descrito abaixo.
-  Caso a função seja chamada sem nenhum parâmetro, o valor undefined deve ser retornado.
+  
+  (FEITO) - Caso a função seja chamada sem nenhum parâmetro, o valor undefined deve ser retornado.
 
   Parâmetros:
     - Uma string;
@@ -16,6 +17,13 @@
       #VQV!'
 */
 
-const vqv = () => {};
-
-module.exports = vqv;
+const vqv = (name, age) => {
+    if (typeof (name, age) === 'undefined') {
+  return undefined;
+  }
+  return (`Oi, meu nome é ${name}!
+Tenho ${age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`); 
+};
+module.exports = vqv;clearImmediate

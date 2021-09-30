@@ -23,6 +23,7 @@ const average = (array) => {
     }
      total += array[index];
     }
+    // A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo.
     return Math.round(total / array.length);
   };
   
