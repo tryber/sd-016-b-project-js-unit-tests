@@ -28,10 +28,10 @@ describe('4 - Implemente a função `circle` e', () => {
     expect(circle(NaN)).toBe(undefined);
   });
   it('verifica se a função retorna um objeto', () => {
-    expect(typeof {}).toBe('object');
+    expect(typeof circle(2)).toBe('object');
   });
   it('verifica se a função retorna 3 propriedades', () => {
-    expect({radius: Number, area: Number, circumference: Number}).toStrictEqual({radius: Number, area: Number, circumference: Number});
+    expect(circle(3)).toStrictEqual({radius: Number, area: Number, circumference: Number});
   });
   it('verifica se a função retorna undefined, quando não recebe nenhum parâmetro', () => {
     expect(circle()).toBe(undefined);
