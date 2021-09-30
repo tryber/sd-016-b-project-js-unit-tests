@@ -46,18 +46,23 @@ const createMenu = require('../src/restaurant');
 
 describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
-    // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui a
-    // chave fetchMenu, a qual tem como valor uma função.
+    // fail('Teste vazio!');
+    // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui a chave fetchMenu, a qual tem como valor uma função.
     // ```
-    // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
+    // const objetoRetornado = createMenu(); 
+    // Retorno: { fetchMenu: () => {}, ... }
     // ```
+    expect(typeof createMenu).toBe('function');
+    expect(createMenu()).toHaveProperty('fetchMenu');
+    
     // TESTE 2: Verifique se 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`, 
     // considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
     // ```
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
+    expect(createMenu({ food: {}, drink: {} }).fetchMenu()).toEqual({ food: {}, drink: {} });
+
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
@@ -65,6 +70,13 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
+    const menuTest = {
+        food: {'coxinha': 3.90, 'sanduiche': 9.90},
+        drinks: {'agua': 3.90, 'cerveja': 6.90}
+      };
+
+    expect(createMenu(menuTest).fetchMenu()).toEqual(menuTest);
+    
     // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
@@ -72,9 +84,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
+    expect(createMenu('qualquerCoisa').consumption).toEqual([]);
+    
     // TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
-    // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
-    // ao array retornado em `objetoRetornado.consumption`.
+    // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada ao array retornado em `objetoRetornado.consumption`.
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
@@ -82,6 +95,11 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
+    let restaurant = createMenu();
+    restaurant.order('coxinha');
+
+    expect(restaurant.consumption).toEqual(['coxinha']);
+    
     // TESTE 6: Verifique se, ao adicionar três pedidos, dentre bebidas e comidas, o array `objetoRetornado.consumption` contém os itens pedidos.
     // ```
     // objetoRetornado.order("coxinha");
@@ -90,6 +108,14 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
+    restaurant = createMenu();
+    restaurant.order('coxinha');
+    restaurant.order('agua');
+    restaurant.order('sopa');
+    restaurant.order('sashimi');
+    
+    expect(restaurant.consumption).toEqual(['coxinha', 'agua', 'sopa', 'sashimi']);
+
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
@@ -99,6 +125,13 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.consumption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
+    restaurant = createMenu(menuTest);
+    restaurant.order('coxinha');
+    restaurant.order('agua');
+    restaurant.order('coxinha');
+    
+    expect(restaurant.consumption).toEqual(['coxinha', 'agua', 'coxinha']);
+
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
@@ -108,6 +141,8 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
+    expect(restaurant.pay()).toBeCloseTo(11.7);
+
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
