@@ -99,6 +99,13 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
+    menu = createMenu({ food: {}, drink: {} });
+    menu.order('coxinha');
+    menu.order('agua');
+    menu.order('sopa');
+    menu.order('sashimi');
+    expect(menu.consumption).toStrictEqual(["coxinha", "agua", "sopa", "sashimi"]);
+
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
