@@ -43,14 +43,38 @@ Retorno:
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('quando não recebe um paramtero retorna undefined', () => {
-  expect(getCharacter()).tobe(undefined)  
+  expect(getCharacter()).toBe(undefined)  
   });
   it('test se retorna o objeto correto para o paramatro "Arya"', () => {
-  expect(getCharacter()).toEqual({
+  expect(getCharacter('Arya')).toEqual({
     name: 'Arya Stark',
     class: 'Rogue',
     phrases: ['Not today', 'A girl has no name.']
-  })  
+  })
+  });
+  it('test se retorna o objeto correto para o paramatro "Arya"', () => {
+  expect(getCharacter('Brienne')).toEqual({
+    name: 'Brienne Tarth',
+    class: 'Knight',
+    phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.']
+  })
+  });
+  it('test se retorna o objeto correto para o paramatro "Melissandre"', () => {
+  expect(getCharacter('Melissandre')).toEqual({
+    name: 'Melissandre',
+    class: 'Necromancer',
+    phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']
+  })
+  });
+  it('Teste se os parâmetros não são Case Sensitive.', () => {
+  expect(getCharacter('arya')).toEqual({
+    name: 'Arya Stark',
+    class: 'Rogue',
+    phrases: ['Not today', 'A girl has no name.']
+  })
+  });
+  it('Teste se ao passar um nome que não está na tabela, a função retorna undefined.', () => {
+  expect(getCharacter('Jasmin')).toBe(undefined)
   });
 });
 // ESCREVA SEUS TESTES ABAIXO:
