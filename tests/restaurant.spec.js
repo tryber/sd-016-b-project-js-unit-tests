@@ -66,6 +66,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
+    expect(createMenu({ abc: 'abc', num: 123, food: { name: 'foodName' }, drink: { drinkPrice: 12.34 } }).fetchMenu()).toMatchObject({ abc: 'abc', num: 123, food: { name: 'foodName' }, drink: { drinkPrice: 12.34 } });
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
