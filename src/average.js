@@ -11,7 +11,21 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+const average = (arr) => {
+  let sumIndex = 0;
+  if (arr.length === 0) {
+    return undefined;
+  }
 
-const average = () => {};
+  for (let i = 0; i < arr.length; i += 1) {
+    if (typeof arr[i] !== 'number') {
+      return undefined;
+    }
+    sumIndex += arr[i];
+  }
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+  // A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo.
+  return Math.round(sumIndex / arr.length);
+};
 
 module.exports = average;

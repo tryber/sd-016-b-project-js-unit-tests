@@ -33,8 +33,16 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
-
-const arrayGenerator = (type, object) => {};
-
+const calculator = (number1, number2) => {
+  const sum = number1 + number2;
+  const mult = number1 * number2;
+  // O método Math.trunc() retorna a parte inteira de um número, descartando suas casas decimais.
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+  const div = Math.trunc(number1 / number2);
+  const sub = number1 - number2;
+  return { sum, mult, div, sub };
+};
+// como é só uma linha, não precisou do return e das chaves, porque só retorna uma função.
+const arrayGenerator = (type, object) => Object[type](object); 
+// console.log(arrayGenerator('entries', calculator(1, 2))); passa os parametros pra dentro da função, dessa forma fica de maneira dinâmica.
 module.exports = { calculator, arrayGenerator };

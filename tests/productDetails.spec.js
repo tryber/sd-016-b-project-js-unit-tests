@@ -28,13 +28,23 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
+    expect(typeof productDetails).toEqual('function'); 
     // Teste se o retorno da função é um array.
+    // https://jestjs.io/pt-BR/docs/expect#tobeinstanceofclass
+    expect(productDetails('a', 'b')).toBeInstanceOf(Array);  
     // Teste se o array retornado pela função contém dois itens dentro.
+    expect(productDetails('a', 'b').length).toBe(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
+    expect(productDetails('c', 'd')[0]).toBeInstanceOf(Object);
+    expect(productDetails('c', 'd')[1]).toBeInstanceOf(Object);
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    const [object, object2] = productDetails('d', 'f');
+    expect(object).not.toEqual(object2);
     // Teste se os dois productIds terminam com 123.
+    // endsWith() vefirica se a string tem 123 e retorna um booleano
+    expect(object.details.productId.endsWith('123')).toBe(true);
+    expect(object2.details.productId.endsWith('123')).toBe(true);
   });
 });
