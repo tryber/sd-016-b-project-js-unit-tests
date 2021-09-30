@@ -15,6 +15,18 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (nome) => {
+// uma constante que recebe um objeto com as duas propriedade deividamente setada 
+// a propriedade name recebendo nome passado como argumento da função
+// a propriedade feedbak recebendo o retorno da arrow function 'Eita pessoa boa' 
+  const obj = {
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
+   };
+   // no final temos o objeto que será retornado no momento que a função cerateStudent 
+   // for invocada
+  return obj;
+};
 
+console.log(createStudent('tonis'));
 module.exports = createStudent;
