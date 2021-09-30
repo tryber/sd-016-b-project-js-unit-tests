@@ -14,14 +14,16 @@
 
 const average = (array) => {
   let soma = 0;
-  let resposta = '';
+  let resposta;
+
   for (let i = 0; i < array.length; i += 1) {
-     soma += array[i];
-     resposta = soma / array.length;
     if (typeof array[i] !== 'number' || array === []) {
-      resposta = undefined;
+      return undefined;
     }
+      soma += array[i];
+      resposta = Math.round(soma / array.length);
   }
   return resposta;
 };
+console.log(average([5, 7]));
 module.exports = average;
