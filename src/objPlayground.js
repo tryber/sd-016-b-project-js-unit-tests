@@ -61,5 +61,5 @@ const arrayGenerator = (type, object) => {
 
 module.exports = {
   calculator,
-  arrayGenerator
+  arrayGenerator,
 };
