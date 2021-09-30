@@ -95,7 +95,7 @@ const catchPrices = (cons, foods, drinks) => {
   for (let i2 = 0; i2 < cons.length; i2 += 1) {
     sumItens(i2, foodsAndDrinks, cons);
   }
-  return sum;
+  return sum + sum * 0.1;
 };
 
 const createMenu = (objFD) => {

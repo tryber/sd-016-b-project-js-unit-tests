@@ -169,7 +169,7 @@ describe('Tests with the same itens', () => {
   });
 
   it('TEST 8 - SHOULD RETURN THE SAME VALUE AS EXPECTED', () => {
-    expect(objetoRetornado.pay()).toBe(11.7);
+    expect(objetoRetornado.pay()).toBe(12.87);
   });
 });
 
@@ -184,6 +184,6 @@ describe('Test 8 - Testing test 8 with new values', () => {
     newobjetoRetornado.order('agua');
     newobjetoRetornado.order('coxinha');
     newobjetoRetornado.order('sanduiche');
-    expect(newobjetoRetornado.pay()).toBe(34.5);
+    expect(newobjetoRetornado.pay()).toBe(37.95);
   });
 });
