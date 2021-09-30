@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (param1, param2) => {
+  if (param1 == null || param2 == null) {
+    return undefined;
+  }
 
+  return `Oi, meu nome é ${param1}!\n
+Tenho ${param2} anos,\n
+trabalho na Trybe e mando muito em programação!\n
+#VQV!`;
+};
+
+console.log(vqv('Tunico', 29));
 module.exports = vqv;
