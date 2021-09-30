@@ -13,18 +13,21 @@
 */
 
 const average = (arrayNumeros) => {
-  let totalNumeros = arrayNumeros.length;
+  const totalNumbers = arrayNumeros.length;
   let sum = 0;
+
   if (arrayNumeros.length < 1) {
     return undefined;
   }
+
   for (let number of arrayNumeros) {
     if (typeof (number) === 'string') {
       return undefined;
     }
     sum += number;
   }
-  return Math.round(sum / totalNumeros);
+
+  return Math.round(sum / totalNumbers);
 };
 
 module.exports = average;
