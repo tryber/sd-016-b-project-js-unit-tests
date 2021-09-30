@@ -12,22 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (average) => {
-  let size = average.length;
-  let sum = average.reduce((soma, total) => soma += total, 0);
+const average = (avrg) => { 
+  let size = avrg.length;
+  let sum = avrg.reduce(function (soma, total) {
+    return soma += total;
+  }, 0);
 
   let result = sum / size;
 
   for (let i = 0; i < size; i += 1) {
-    if (typeof (average[i]) !== 'number') { 
-      return undefined};
-    }
+    if (typeof (avrg[i]) !== 'number') { return undefined; }
+  }
 
     if (size < 1) {
       return undefined;
-    }
-
+    } 
   return Math.round(result);
-};
-
+  };
 module.exports = average;
