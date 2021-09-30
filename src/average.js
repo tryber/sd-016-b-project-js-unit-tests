@@ -25,5 +25,5 @@ const average = (array) => {
   }
   return resposta;
 };
-console.log(average([5, 7]));
+
 module.exports = average;
