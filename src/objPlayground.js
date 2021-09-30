@@ -43,6 +43,4 @@ const calculator = (number1, number2) =>
 
 const arrayGenerator = (type, object) => Object[type](object);
 
-console.log(arrayGenerator('keys', calculator()));
-
 module.exports = { calculator, arrayGenerator };
