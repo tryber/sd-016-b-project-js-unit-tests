@@ -23,7 +23,7 @@ const circle = require('../src/circle');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-describe('4 - Implemente a função `circle` e', () => {
+describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('verifica se a função retorna undefined, caso o parâmetro passado não seja um número.', () => {
     expect(circle(NaN)).toBe(undefined);
   });
