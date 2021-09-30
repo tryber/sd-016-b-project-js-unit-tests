@@ -99,5 +99,4 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
   objetoRetornado.order('cerveja');
   expect(objetoRetornado.pay()).toBe(23.00)
   })
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
