@@ -12,8 +12,31 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
+const average = (array) => {
+  let sum = 0;
+
+  if (array.length === 0) {
+    // Verifica se a array é vazia.
   
+    return undefined;
+  }
+
+  for (let i of array) {
+    if ((typeof i !== 'number') || (Number.isNaN(i))) {
+      // Verifica se o valor não é do tipo number ou é o NaN.
+
+      return undefined;
+    }
+
+    sum += i;
+    // Soma o valor do elemento atual ao valor da variável.
+  }
+
+  const result = Math.round((sum / array.length));
+  // Divide o valor de sum pelo número de elementos da array.
+  // Arredonda o valor da divisão para o número inteiro mais próximo.
+
+  return result;
 };
 
 module.exports = average;
