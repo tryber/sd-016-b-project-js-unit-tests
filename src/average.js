@@ -12,6 +12,23 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+// Referencia
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+const average = (array) => {
+  let soma = 0;
+  let resultado = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let index of array) {
+    if (typeof (index) === 'string') {
+      return undefined;
+    }
+    soma += index;
+  }
+  resultado = soma / array.length;
+  return Math.round(resultado);
+};
 
 module.exports = average;
