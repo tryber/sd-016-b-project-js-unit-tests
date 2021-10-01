@@ -19,7 +19,8 @@
 const vqv = (string, numero) => {
   if (typeof string === 'undefined' || numero === null) return undefined;
   let paragrafo = 'string';
-  paragrafo = `Oi, meu nome é ${string}!\nTenho ${numero} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
+  paragrafo = 
+  `Oi, meu nome é ${string}!\nTenho ${numero} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
   return paragrafo;
 };
 
