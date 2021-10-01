@@ -8,9 +8,9 @@ Essa função recebe como parâmetro o nome de um personagem e retorna um objeto
 
 O retorno será de acordo com a seguinte relação:
 
- Parâmetro  |      Nome       |    Classe   |              Frases
+Parâmetro  |      Nome       |    Classe   |              Frases
 ----------------------------------------------------------------------------------
-   Arya     |   Arya Stark    |    Rogue    | 'Not today', 'A girl has no name.'
+  Arya     |   Arya Stark    |    Rogue    | 'Not today', 'A girl has no name.'
   Brienne   |  Brienne Tarth  |    Knight   | 'Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'
 Melissandre |   Melissandre   | Necromancer | 'Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'
 
