@@ -36,7 +36,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   });
     // Teste se o retorno da função é um array.
   it('Verifica se o retorno da função é um array.', () => {
-    expect(Array.isArray(productDetails('a', 'b'))).not.toBeFalsy();
+    expect(Array.isArray(productDetails('Alcool gel', 'Máscara'))).not.toBeFalsy();
   });
     // Teste se o array retornado pela função contém dois itens dentro.
   it('Verifica se o retorno da fuinction tem um array com ditens dentro', () => {
@@ -44,19 +44,19 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   });
     // Teste se os dois itens dentro do array retornado pela função são objetos.
   it('Verifica se os retornos da function são objects', () => {
-    expect(typeof (productDetails('a', 'e')[0]))&& expect(typeof (productDetails('a', 'e')[1])).toEqual('object');
+    expect(typeof (productDetails('Alcool gel', 'Máscara')[0]))&& expect(typeof (productDetails('Alcool gel', 'Máscara')[1])).toEqual('object');
   });
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
   it('Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.', () => {
-    expect(productDetails('a', 'b')[0]).not.toMatchObject(productDetails('a', 'b')[1]);
+    expect(productDetails('Alcool gel', 'Máscara')[0]).not.toMatchObject(productDetails('Alcool gel', 'Máscara')[1]);
   });
     // Teste se os dois productIds terminam com 123.
     describe('6.2 - Teste se os dois productIds terminam com 123.', () => {
     it('Verifica se o primeiro paramentro tem o  productIds que terminam com 123.', () => {
-      expect(productDetails('a', 'b')[0].details.productId).toStrictEqual(expect.stringMatching(/123$/));
+      expect(productDetails('Alcool gel', 'Máscara')[0].details.productId).toStrictEqual(expect.stringMatching(/123$/));
     });
     it('Verifica se o segundo paramentro tem o  productIds que terminam com 123.', () => {
-      expect(productDetails('a', 'b')[1].details.productId).toStrictEqual(expect.stringMatching(/123$/));
+      expect(productDetails('Alcool gel', 'Máscara')[1].details.productId).toStrictEqual(expect.stringMatching(/123$/));
     });
     });
 });
