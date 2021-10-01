@@ -5,13 +5,13 @@ const myCounter = require('../src/myCounter');
   Como podemos perceber, eles vão adicionando valores ao array até sua condição de parada.
   Corrija o código abaixo para que a função retorne o array correto.
   Atenção: não remova os `for`s da função e sim corrija os erros presentes.
-
+  
   Parâmetros:
   - Nenhum.
-
+  
   Comportamento:
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
-
+  
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
