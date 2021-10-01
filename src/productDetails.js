@@ -38,5 +38,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
+// console.log(productDetails('astro', 'd'));
 module.exports = productDetails;

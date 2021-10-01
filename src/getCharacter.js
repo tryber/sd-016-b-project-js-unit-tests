@@ -8,7 +8,7 @@ O retorno será de acordo com a seguinte relação:
    Arya     |   Arya Stark    |    Rogue    | 'Not today', 'A girl has no name.'
   Brienne   |  Brienne Tarth  |    Knight   | 'Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'
 Melissandre |   Melissandre   | Necromancer | 'Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'
-
+tamplete object this{ name: '', class: '', phrases: [''] }
 - Se o parâmetro não estiver na tabela, a função retorna undefined.
 - Se o parâmetro estiver, a função retorna um objeto no formato abaixo:
 

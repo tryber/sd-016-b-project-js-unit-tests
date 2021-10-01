@@ -23,11 +23,11 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   });
   // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
   it('Testar se ao receber um array que contem numeros e strings se vai retornar FALSE', () => {
-    expect(numbers([1, 2, '3', 4, 5])).toBeFalsy();
+    expect(numbers([1, 2, '3', 4, 5])).not.toBeTruthy();
   });
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
   it('Testar se ao receber strings retorna false seconde implementation', () => {
-    expect(numbers([1, 'a', 3] )).toBeFalsy();
+    expect(numbers([1, 'a', 3] )).toBe(false);
   });
     // Escreva um teste em que a função recebe [' '] e retorna false
   it('Testar se ao executar a funcao sem pasar parametros ela retorna false', () => {

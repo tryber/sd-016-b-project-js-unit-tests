@@ -21,11 +21,11 @@ const mdedia = (arr) => { const md = Math.round(arr.reduce(red, soma) / arr.leng
 const average = (a) => (a.length && a.every((e) => typeof e === 'number') ? mdedia(a) : undefined);
 
 // const average = (arrNum) => {
-  // if (arrNum.length && typeof arrNum === 'number') {
+// if (arrNum.length && typeof arrNum === 'number') {
 //     return Math.round(arrNum.reduce((a, b) => a + b / arrNum.length));
 //   }
 //   return undefined;
 // };
 
-console.log(average([1, 2, 3, 4, 5]));
+// console.log(average([1, 2, 3, 4, 5]));
 module.exports = average;
