@@ -46,12 +46,9 @@ const calculator = (number1, number2) => {
 // console.log(calculator(5,2));
 
 const arrayGenerator = (type, object) => {
-  // const tipo = type;
-  // const transform = Object.tipo(object);
   if (type === 'keys') { return Object.keys(object); }
   if (type === 'values') { return Object.values(object); }
   if (type === 'entries') { return Object.entries(object); }
-  // return transform;
 };
 // console.log(arrayGenerator('keys',{ sum: 3, mult: 2, div: 1, sub: 0 }));
 // console.log(arrayGenerator('values', { sum: 3, mult: 2, div: 1, sub: 0 }));
