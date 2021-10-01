@@ -82,11 +82,15 @@
 // { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
 
 const payment = (menu) => {
+  // Reference: Tales Coelho
   let price = 0;
   const { food, drink } = menu.fetchMenu();
   const allMenu = { ...food, ...drink }; 
-  for (let index of menu.consumption) {
-    price += allMenu[index];
+  console.log(menu.consumption);
+  console.log(allMenu);
+  for (let index = 0; index < menu.consumption.length; index += 1) {
+    price += allMenu[menu.consumption[index]];
+    console.log(menu.consumption[index]);
   }
   return Math.round(price);
 };
@@ -94,8 +98,8 @@ const payment = (menu) => {
 const createMenu = (obj) => {
   const menu = {
     fetchMenu: () => obj,
-    order: (string) => menu.consumption.push(string),
     consumption: [],
+    order: (string) => menu.consumption.push(string),
     pay: () => payment(menu),
   };
   return menu;
@@ -104,13 +108,13 @@ const createMenu = (obj) => {
 const restaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, 
   drink: { agua: 3.9, cerveja: 6.9 }, 
 });
-
+// console.log(restaurante);
 restaurante.order('coxinha');
 restaurante.order('agua');
-restaurante.order('coxinha');
+restaurante.order('sopa');
 // console.log(restaurante.fetchMenu());
-console.log(restaurante.consumption); 
-console.log(restaurante.pay());
+// console.log(restaurante.consumption); 
+// console.log(restaurante.pay());
 payment(restaurante);
 
 module.exports = createMenu;
