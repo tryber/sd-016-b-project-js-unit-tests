@@ -15,6 +15,19 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = () => {};
+const createStudent = (nome) => {
+  const estudante = {
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
+  };
+  return estudante;
+};
 
+ /*  const estudante = createStudent('Leandrão, o Lobo Solitário');
+  expect(typeof estudante).toBe('object');
+  expect(typeof estudante.feedback).toBe('function');
+  expect(estudante.name).toMatch(/Leandrão, o Lobo Solitário/);
+  expect(estudante.feedback()).toBe(goodPerson);
+
+  */ 
 module.exports = createStudent;
