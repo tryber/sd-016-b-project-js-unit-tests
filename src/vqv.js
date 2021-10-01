@@ -16,6 +16,16 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (n, a) => {
+  // If the function is called without any parameters
+  if (n === undefined && a === undefined) {
+    return undefined;
+  }
+  
+  return `Oi, meu nome é ${n}!
+Tenho ${a} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+};
 
 module.exports = vqv;
