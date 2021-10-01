@@ -9,9 +9,23 @@
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
+    ,0
+    ,0                                                                                                                                                                                                                                                                   
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const red = (a, b) => a + b; let soma = 0;
 
+const mdedia = (arr) => { const md = Math.round(arr.reduce(red, soma) / arr.length); return md; };
+
+const average = (a) => (a.length && a.every((e) => typeof e === 'number') ? mdedia(a) : undefined);
+
+// const average = (arrNum) => {
+// if (arrNum.length && typeof arrNum === 'number') {
+//     return Math.round(arrNum.reduce((a, b) => a + b / arrNum.length));
+//   }
+//   return undefined;
+// };
+
+// console.log(average([1, 2, 3, 4, 5]));
 module.exports = average;
