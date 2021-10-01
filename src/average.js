@@ -14,19 +14,20 @@
 
 const average = (avrg) => { 
   let size = avrg.length;
-  let sum = avrg.reduce(function (soma, total) {
-    return soma += total;
-  }, 0);
+  let sum = 0;
 
-  let result = sum / size;
-
-  for (let i = 0; i < size; i += 1) {
-    if (typeof (avrg[i]) !== 'number') { return undefined; }
+    for (let i = 0; i < size; i += 1) {
+    if (typeof (avrg[i]) !== 'number') {
+      return undefined;
+    }
+    sum += avrg[i];
   }
 
     if (size < 1) {
       return undefined;
-    } 
-  return Math.round(result);
-  };
+    }
+
+  return Math.round(sum / size);
+};
+
 module.exports = average;
