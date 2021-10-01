@@ -81,9 +81,9 @@
 
 const restaurant = {};
 const createMenu = (Menu) => {
-   restaurant.fetchMenu = () => Menu,
-   restaurant.consumption = [],
-   restaurant.order = (request) => restaurant.consumption.push(request),
+   restaurant.fetchMenu = () => Menu;
+   restaurant.consumption = [];
+   restaurant.order = (request) => restaurant.consumption.push(request);
    restaurant.pay = () => {
     let soma = 0;
     for (let i = 0; i < restaurant.consumption.length; i += 1) {
@@ -95,7 +95,7 @@ const createMenu = (Menu) => {
     }
     const total = soma * 1.1;
     return total;
-   }
+   };
    return restaurant;
   };
 
