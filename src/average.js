@@ -16,9 +16,7 @@ const average = (array) => {
   let media = 0;
   let soma = 0;
 
-  if (array.length === 0) {
-    return undefined;
-  }
+  if (array.length === 0) { return undefined; }
 
   for (let index = 0; index < array.length; index += 1) {
     const type = typeof array[index];
