@@ -30,24 +30,30 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
-    // expect(typeof productDetails).toBe('function');
+    expect(typeof productDetails).toBe('function');
 
     // Teste se o retorno da função é um array.
-    // expect(Array.isArray(productDetails())).toBeTruthy();
+    expect(Array.isArray(productDetails())).toBeTruthy();
     
     // Teste se o array retornado pela função contém dois itens dentro.
-    // expect(Object.keys(productDetails()).length).toEqual(2);
+    expect(Object.keys(productDetails()).length).toEqual(2);
 
     // Teste se os dois itens dentro do array retornado pela função são objetos.
-    // expect(Object(productDetails())).toMatchObject({});
+    expect(Object(productDetails())).toMatchObject({});
 
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    
+    const productOneEqual = Object.values(productDetails()[0]);
+    const productTwoEqual = Object.values(productDetails()[1]);
+
+    expect((productOneEqual !== productTwoEqual)).toEqual((productOneEqual !== productTwoEqual));
 
     // Teste se os dois productIds terminam com 123.
+    const productOne = Object.values(productDetails()[0].details);
+    const productTwo = Object.values(productDetails()[1].details);
+
     const expected = [
       expect.stringMatching(/[123]$/),
     ];
-    expect(Object.values(Object(productDetails()[0].details)) && Object.values(Object(productDetails()[1].details))).toEqual(expect.arrayContaining(expected));
+    expect(productOne && productTwo).toEqual(expect.arrayContaining(expected));
   });
 });
