@@ -81,9 +81,7 @@
 
 const createMenu = (obj) => {
   return {
-    fetchMenu: () => {
-      return obj;
-    },
+    fetchMenu: () => obj,
   }
 };
 
