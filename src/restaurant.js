@@ -89,6 +89,6 @@ const createMenu = (objeto) => {
   
   return menuRestaurant;
 };
-// console.log({ food: {}, drink: {} });
+console.log({ food: {}, drink: {} });
 
 module.exports = createMenu;
