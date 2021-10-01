@@ -28,4 +28,5 @@ const average = (array) => {
   }
     return Math.round(total / allNumbers);
 };
+
 module.exports = average;
