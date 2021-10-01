@@ -104,7 +104,9 @@ const createMenu = (obj) => {
   return menu;
 };
 
-const restaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+const restaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, 
+  drink: { agua: 3.9, cerveja: 6.9 }, 
+});
 
 restaurante.order('coxinha');
 restaurante.order('agua');
