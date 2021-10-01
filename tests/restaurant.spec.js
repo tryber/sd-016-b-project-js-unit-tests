@@ -62,7 +62,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     const objetoRetornadoRight = createMenu({ food: {}, drink: {} });
     objetoRetornadoRight.fetchMenu() // Retorno: { food: {}, drink: {}}
     expect(typeof objetoRetornadoRight.fetchMenu()).toBe('object');
-    expect(objetoRetornadoRight.fetchMenu()).toEqual([{ food: {}, drink: {} }]);
+    expect(objetoRetornadoRight.fetchMenu()).toEqual({ food: {}, drink: {} });
 
     // ```
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
@@ -70,7 +70,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
 
     const objetoRetornadoQualquer = createMenu({trem: 'piui', pão: 'de queijo'});
     objetoRetornadoQualquer.fetchMenu(); // Retorno: objetoQualquer
-    expect(objetoRetornadoQualquer.fetchMenu()).toEqual([{trem: 'piui', pão: 'de queijo'}]);
+    expect(objetoRetornadoQualquer.fetchMenu()).toEqual({trem: 'piui', pão: 'de queijo'});
 
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
@@ -135,7 +135,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
       drinks: {'agua': 3.90, 'cerveja': 6.90},
     }
 
-    const objetoRetornadoRightTest8 = createMenu()
+    const objetoRetornadoRightTest8 = createMenu(testMenu);
     objetoRetornadoRightTest8.order('coxinha');
     objetoRetornadoRightTest8.order('agua');
     objetoRetornadoRightTest8.order('coxinha');
