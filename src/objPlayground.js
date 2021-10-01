@@ -34,8 +34,26 @@
 */
 
 const calculator = (number1, number2) => {
+  const obj = {
+    sum: number1 + number2,
+    mult: number1 * number2,
+    div: Math.floor(number1 / number2), // a propriedad Math.floor() sempre arrendonda para menor 
+    sub: number1 - number2,
+  };
+  return obj;
 };
+  
+// console.log(calculator(5,2));
 
-const arrayGenerator = (type, object) => {};
-
+const arrayGenerator = (type, object) => {
+  // const tipo = type;
+  // const transform = Object.tipo(object);
+  if (type === 'keys') { return Object.keys(object); }
+  if (type === 'values') { return Object.values(object); }
+  if (type === 'entries') { return Object.entries(object); }
+  // return transform;
+};
+// console.log(arrayGenerator('keys',{ sum: 3, mult: 2, div: 1, sub: 0 }));
+// console.log(arrayGenerator('values', { sum: 3, mult: 2, div: 1, sub: 0 }));
+// console.log(arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }));
 module.exports = { calculator, arrayGenerator };
