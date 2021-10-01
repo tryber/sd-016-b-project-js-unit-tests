@@ -18,7 +18,8 @@
 
 const vqv = (name, age) => {
   if (name !== undefined && age !== undefined) {
-  const paragraph = `Oi, meu nome é ${name}!\nTenho ${age} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
+    const complement = '\ntrabalho na Trybe e mando muito em programação!\n#VQV!';
+    const paragraph = `Oi, meu nome é ${name}!\nTenho ${age} anos, ${complement}`;
   return paragraph;
   }
   return undefined;
