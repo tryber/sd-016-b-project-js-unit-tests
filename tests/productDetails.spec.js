@@ -26,10 +26,18 @@ const productDetails = require('../src/productDetails');
 
 */
 
+const made = productDetails('Alcool gel', 'Máscara');
+
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
+    expect(typeof (productDetails)).toEqual('function');
+    expect(Array.isArray(made)).toEqual(true);
+    expect(made.length).toEqual(2);
+    expect(typeof (made[0]) === 'object' && typeof (made[1]) === 'object').toEqual(true);
+    expect(made[0].name !== made[1].name).toEqual(true);
+    expect(made[0].details !== made[1].details).toEqual(true);
+    expect(made[0].details.productId.endsWith('123')).toEqual(true);
+    expect(made[1].details.productId.endsWith('123')).toEqual(true);
     // Teste se productDetails é uma função.
     // Teste se o retorno da função é um array.
     // Teste se o array retornado pela função contém dois itens dentro.
