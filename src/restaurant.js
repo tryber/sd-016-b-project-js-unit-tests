@@ -82,7 +82,6 @@
 // { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }
 
 const payment = (menu) => {
-  // Reference: Tales Coelho
   let price = 0;
   const { food, drink } = menu.fetchMenu();
   const allMenu = { ...food, ...drink }; 
