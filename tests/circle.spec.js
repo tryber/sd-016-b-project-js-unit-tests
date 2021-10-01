@@ -41,10 +41,6 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
         //expect(Object.values(circle(2))[2]).toHaveProperty('circumference', 12.56);
     expect(Object.values(circle(2))[2]).toBe(12.56);
     expect(Object.values(circle(3))[1]).toBeCloseTo(28.26);
-    //expect(Object.entries(circle(3)).toBe({ 'radius': 2, 'area': 12.56, 'circumference': 12.56 }));
-    expect(Object.entries(circle(3)).toEqual([ ['radius', 2], ['area', 12.56], ['circumference', 12.56] ]));
-
-
+    expect(circle(3)).toEqual({ radius: 3, area: 28.259999999999998, circumference: 18.84 });
   });
 });
-
