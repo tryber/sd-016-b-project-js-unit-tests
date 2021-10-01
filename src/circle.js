@@ -18,7 +18,7 @@
         Outra dica: que tal pesquisar se existe um matcher que compara valores próximos?
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
-/*  
+ 
 const circle = (radius) => {
   const PI = 3.14;
 
@@ -32,9 +32,10 @@ const circle = (radius) => {
 };
 console.log(circle(2));
 
-module.exports = circle; */
+module.exports = circle;
 
-const circle = (radius) => {
+
+/* const circle = (radius) => {
   const PI = 3.14;
 
   if (!radius || typeof radius !== 'number') { return undefined; }
@@ -46,4 +47,4 @@ const circle = (radius) => {
   };
 };
 let result = Object.entries(circle(3));
-console.log(result);
+console.log(result); */
