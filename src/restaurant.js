@@ -94,10 +94,7 @@ const payment = (menu) => {
 const createMenu = (obj) => {
   const menu = {
     fetchMenu: () => obj,
-    order: (string) => {
-      let obejto = menu;
-      obejto.consumption.push(string); 
-  },
+    order: (string) => menu.consumption.push(string),
     consumption: [],
     pay: () => payment(menu),
   };
