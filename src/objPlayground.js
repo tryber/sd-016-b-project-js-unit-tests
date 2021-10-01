@@ -44,11 +44,11 @@ const calculator = (number1, number2) => {
 };
 
 const arrayGenerator = (type, object) => {
-  if (type === 'keys'){
+  if (type === 'keys') {
     return Object.keys(object);
-  } else if (type === 'values'){
+  } if (type === 'values') {
     return Object.values(object);
-  } else if (type === 'entries'){
+  } else if (type === 'entries') {
     return Object.entries(object);
   }
 };
