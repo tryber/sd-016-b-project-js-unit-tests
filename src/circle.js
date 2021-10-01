@@ -32,5 +32,6 @@ const circle = (radius) => {
 };
 
 // console.log(circle(1));
+// console.log(Object.keys(circle).length); return 0
 
 module.exports = circle;

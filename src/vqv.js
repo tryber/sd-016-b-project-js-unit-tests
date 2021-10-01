@@ -20,7 +20,7 @@ const vqv = (noum, age) => {
   let phrase = '';
   // console.log(noum);
   // console.log(age);
-  if (noum === undefined || age === undefined) {
+  if (!noum || !age) {
     return undefined;
   }
   phrase = (`Oi, meu nome é ${noum}!

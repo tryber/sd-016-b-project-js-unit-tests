@@ -39,4 +39,6 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+// console.log(productDetails('ala','bacana'));
+// console.log(productDetails.length); Verificando quantos argumentos são chamados na função
 module.exports = productDetails;
