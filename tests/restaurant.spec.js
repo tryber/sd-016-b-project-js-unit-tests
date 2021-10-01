@@ -103,20 +103,28 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique se, ao adicionar três pedidos, dentre bebidas e comidas, o array `objetoRetornado.consumption` contém os itens pedidos.
     // ```
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
-    // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+
+    const objetoRetornadoRightTest6 = createMenu();
+    objetoRetornadoRightTest6.order("coxinha");
+    objetoRetornadoRightTest6.order("agua");
+    objetoRetornadoRightTest6.order("sopa");
+    objetoRetornadoRightTest6.order("sashimi");
+    objetoRetornadoRightTest6.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+    expect(objetoRetornadoRightTest6.consumption).toEqual(["coxinha", "agua", "sopa", "sashimi"]);
+
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.consumption // Retorno: ['coxinha', 'agua', 'coxinha']
+
+    const objetoRetornadoRightTest7 = createMenu()
+    objetoRetornadoRightTest7.order('coxinha');
+    objetoRetornadoRightTest7.order('agua');
+    objetoRetornadoRightTest7.order('coxinha');
+    objetoRetornadoRightTest7.consumption // Retorno: ['coxinha', 'agua', 'coxinha']
+    expect(objetoRetornadoRightTest7.consumption).toEqual(['coxinha', 'agua', 'coxinha']);
+
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
