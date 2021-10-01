@@ -49,7 +49,6 @@
 //
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
-
 //------------------------------------------------------------------------------------------
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
@@ -81,12 +80,14 @@
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (objeto) => { 
-  let obj = {};
-  obj = {
-  fetchMenu: () => objeto,
-  consumption: [],
-  };
-  return obj;
+  let menuRestaurant = {};
+  let orderMenu = (request) => menuRestaurant.consumption.push(request);
+  
+  menuRestaurant.fetchMenu = () => objeto;
+  menuRestaurant.consumption = [];
+  menuRestaurant.order = orderMenu;
+  
+  return menuRestaurant;
 };
 // console.log({ food: {}, drink: {} });
 
