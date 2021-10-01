@@ -43,13 +43,13 @@ const calculator = (n1, n2) => {
 };
 
 const arrayGenerator = (type, results) => {
-  if (type === 'keys'){
+  if (type === 'keys') {
     return Object.keys(results);
   }
-  if (type === 'values'){
+  if (type === 'values') {
     return Object.values(results);
   }
-  if (type === 'entries'){
+  if (type === 'entries') {
     return Object.entries(results);
   }
 };
