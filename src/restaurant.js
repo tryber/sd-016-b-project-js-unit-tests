@@ -89,9 +89,8 @@ const payment = (menu) => {
   console.log(allMenu);
   for (let index = 0; index < menu.consumption.length; index += 1) {
     price += allMenu[menu.consumption[index]];
-    console.log(menu.consumption[index]);
   }
-  return Math.round(price);
+  return ((price * 10) / 100) + (price);
 };
 
 const createMenu = (obj) => {
@@ -110,7 +109,7 @@ const restaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 },
 // console.log(restaurante);
 restaurante.order('coxinha');
 restaurante.order('agua');
-restaurante.order('sopa');
+restaurante.order('coxinha');
 // console.log(restaurante.fetchMenu());
 // console.log(restaurante.consumption); 
 // console.log(restaurante.pay());
