@@ -85,8 +85,6 @@ const payment = (menu) => {
   let price = 0;
   const { food, drink } = menu.fetchMenu();
   const allMenu = { ...food, ...drink }; 
-  console.log(menu.consumption);
-  console.log(allMenu);
   for (let index = 0; index < menu.consumption.length; index += 1) {
     price += allMenu[menu.consumption[index]];
   }
