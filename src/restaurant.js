@@ -96,7 +96,7 @@ const payment = () => {
     }
     return totalToPay;
   }); 
-  return totalToPay;
+  return 1.1 * totalToPay;
 };
 
 const createMenu = (myMenu) => {
@@ -108,5 +108,17 @@ const createMenu = (myMenu) => {
   };
   return obj;
 };
+
+const objetoRetornado = createMenu(
+  {
+    food: { coxinha: 3.90, sanduiche: 9.90 },
+    drinks: { agua: 3.90, cerveja: 6.90 },
+  },
+); 
+
+objetoRetornado.order('agua');
+objetoRetornado.order('cerveja');
+
+console.log(objetoRetornado);
 
 module.exports = createMenu;
