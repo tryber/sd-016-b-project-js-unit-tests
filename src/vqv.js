@@ -21,9 +21,9 @@ const vqv = (param1, param2) => {
     return undefined;
   }
 
-  return `Oi, meu nome é ${param1}!\n
-Tenho ${param2} anos,\n
-trabalho na Trybe e mando muito em programação!\n
+  return `Oi, meu nome é ${param1}!
+Tenho ${param2} anos,
+trabalho na Trybe e mando muito em programação!
 #VQV!`;
 };
 
