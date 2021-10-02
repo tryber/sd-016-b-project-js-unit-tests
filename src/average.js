@@ -12,6 +12,9 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+// REFERÊNCIA: Obtive ajuda do grupo de estudos para execução dos demais desafios.
+// GRUPO DE ESTUDOS: Hugo Daniel, Airton Silva e Breno Danyel da Turma 16 - Tribo B.
+
 const average = (array) => {
   if (array.length === 0) {
     return undefined;
