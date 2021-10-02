@@ -89,6 +89,23 @@ const createMenu = (obj) => {
   restaurant.fetchMenu = () => obj;
   restaurant.consumption = [];
   restaurant.order = orderFromMenu;
+  restaurant.pay = () => {
+    let sum = 0;
+
+    for (const i of restaurant.consumption) {
+      if (restaurant.fetchMenu().drink[i]) {
+        console.log(restaurant.fetchMenu().drink[i]);
+        sum += restaurant.fetchMenu().drink[i];
+      }
+
+      if (restaurant.fetchMenu().food[i]) {
+        console.log(restaurant.fetchMenu().food[i]);
+        sum += restaurant.fetchMenu().food[i];
+      }
+    }
+
+    return sum * 1.1;
+  };
   return restaurant;
 };
 
