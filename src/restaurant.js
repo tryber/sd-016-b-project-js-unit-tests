@@ -79,6 +79,56 @@
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// Colega Hugo Daniel, deu aula sobre o requisito, explicando passo a passo da questão. 
+// criar função com a lógica de pagamento;
+const pagamento = (menu) => {
+  // console.log(menu);
+  // criar uma variavel para guardar a soma do consumo do ciente.
+  let soma = 0;
+  // reatribui o objeto com as chaves abaixo
+  const { food, drink } = menu.fetchMenu();
+  // console.log(menu.fetchMenu());
+  // variavel antes do lint corrigir a sintaxe: const menuCompleto = Object.assign({}, food, drink);
+  const menuCompleto = { ...food, ...drink };
+  // console.log(menu.consumption);
+  for (let index = 0; index < menu.consumption.length; index += 1) {
+    // usando a notaçao de objetos com colchetes para acessar a string que será repassada como chave para acessar o obejto menuCompleto e assim ter acesso ao valor deste objeto a cada volta do looping for.
+    // menuCompleto.coxinha === menuCompleto[menu.consumption[index]].
+    soma += menuCompleto[menu.consumption[index]];
+    // console.log(menu.consumption[index]);
+  }
+  // let contaComDezPorcento = soma + (soma * 10) / 100;
+  return soma;
+};
+
+const createMenu = (objeto) => {
+  const menu = {
+    // criar uma chave que recebe o menu criado com os respectivos chave: valor dos produtos comercializados.
+    fetchMenu: () => objeto,
+    // adicionar ao objeto uma chave para consumação:
+    consumption: [],
+    // adicionar ao objeto uma chave para ordem:
+    order: (chave) => menu.consumption.push(chave),
+    // adicione ao objeto uma chave de pagamento: Neste caso, chamando a função criada para a lógica da soma dos valores de acordo com o consumo do cliente.
+    pay: () => pagamento(menu), 
+  };
+  // console.log(menu.consumption);
+  return menu;
+};
+
+const meuRestaurante = createMenu({ 
+  food: { coxinha: 3.9, sopa: 9.9 }, 
+  drink: { agua: 3.9, cerveja: 6.9 },
+});
+// console.log(meuRestaurante.fetchMenu());
+
+// cliente colicita um item, pelo meuRestaurante.order e assim atraves do push, adicionar itens no pedido de consumaçao dos clientes que está em formato e array;
+// meuRestaurante.order('coxinha');
+// meuRestaurante.order('agua');
+// meuRestaurante.order('coxinha');
+// console.log(meuRestaurante.consumption);
+
+// chamar a funçao pagamento com o objeto criado como parametro.
+pagamento(meuRestaurante);
 
 module.exports = createMenu;

@@ -60,7 +60,7 @@ const getCharacter = (name) => {
   }
 
   const lowered = name.toLowerCase();
-
+ 
   if (characters[lowered]) {
     return characters[lowered];
   }
