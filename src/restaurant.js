@@ -78,7 +78,34 @@
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+const restaurante = {};
 
-const createMenu = () => {};
+const newItem = (str) => {
+  restaurante.consumption.push(str);
+};
+
+// Função preco refatorada baseado no projeto do Gabriel Silvestre // https://github.com/tryber/sd-016-b-project-js-unit-tests/pull/20/files
+
+const preco = () => {
+  let valor = 0;
+  const valueFood = restaurante.fetchMenu().food;
+  const valueDrink = restaurante.fetchMenu().drink;
+
+  restaurante.consumption.forEach((value) => {
+    if (valueFood[value]) valor += valueFood[value];
+    if (valueDrink[value]) valor += valueDrink[value];
+  });
+
+  return valor;
+};
+
+const createMenu = (obj) => {
+  restaurante.fetchMenu = () => obj;
+  restaurante.consumption = [];
+  restaurante.order = newItem;
+  restaurante.pay = preco;
+
+  return restaurante;
+};
 
 module.exports = createMenu;
