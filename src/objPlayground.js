@@ -33,8 +33,23 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
+const calculator = (number1, number2) => {
+  const obj = {
 
-const arrayGenerator = (type, object) => {};
+  sum: number1 + number2,
+  mult: number1 * number2,
+  // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_trunc  
+  div: Math.trunc(number1 / number2),
+  sub: number1 - number2,
 
+};
+
+return obj;
+};
+
+const arrayGenerator = (type, object) => {
+  if (type === 'keys') return Object.keys(object);
+  if (type === 'values') return Object.values(object);
+  if (type === 'entries') return Object.entries(object);
+};
 module.exports = { calculator, arrayGenerator };

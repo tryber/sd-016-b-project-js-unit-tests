@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-one-iteration-loop */
 /*
   A função average recebe um array (tamanho variável) e retorna a média dos valores recebidos.
   Caso a função receba algum valor não númerico ou um array vazio,
@@ -10,8 +11,21 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
+  Média: 
+    - media =(2+2)/2 -->> 4/2 -->> 2
+    - media =(1+2+3+4+5)/5 -->15/5-->>3 
+    - media =()
 */
 
-const average = () => {};
+const average = (array) => {
+    let soma = 0;
+    let media;
+    if (array.length === 0) return undefined;
+    for (let index = 0; index < array.length; index += 1) {
+        if (typeof (array[index]) !== 'number') return undefined;
+        soma += array[index];
+    }
+    return Math.round(soma / array.length);
+};
 
 module.exports = average;
