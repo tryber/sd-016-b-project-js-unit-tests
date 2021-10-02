@@ -37,16 +37,14 @@
 */
 
 const calculator = (number1, number2) => {
-  // eslint-disable-next-line no-new-object
-  let obj = new Object();
-  obj.sum = number1 + number2;
-  obj.mult = number1 * number2;
-  obj.div = Math.floor(number1 / number2);
-  obj.sub = number1 - number2;
-  return obj; 
+  const object = {
+    sum: number1 + number2,
+    mult: number1 * number2,
+    div: Math.floor(number1 / number2),
+    sub: number1 - number2,
   };
-calculator();
-console.log(calculator(1, 3));
+  return object;
+};
 
 const arrayGenerator = (type, object) => {
   switch (type) {
