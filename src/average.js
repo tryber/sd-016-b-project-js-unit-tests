@@ -9,35 +9,19 @@
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
-    - average([1, '2']) // Retorno: undefined;
-*/
+    - average([1, '2']) // Retorno: undefined; */
 
-const casoUndefined1 = (arr) => {
-  for (let i = 0; i < arr.length; i += 1) {
-    if (typeof arr[i] !== 'number') return undefined;
-   }
-};
-
-const casoUndefined2 = (arr) => {
-  for (let i = 0; i <= arr.length; i += 1) {
-    if (arr.length === 0) return undefined;
-   }
-};
-
-const calculaMedia = (arr) => {
+const average = (arr) => {
   let media = 0;
+  if (arr.length === 0) return undefined
+
   for (let i = 0; i < arr.length; i += 1) {
-    media += arr[i];
+     if (typeof arr[i] !== 'number') return undefined
+     media += arr[i];
   }
 
   media /= arr.length;
-  return Math.round(media);
-};
-
-const average = (arr) => {
-  casoUndefined1(arr);
-  casoUndefined2(arr);
-  calculaMedia(arr);
+  return Math.round(media)
 };
 
 module.exports = average;
