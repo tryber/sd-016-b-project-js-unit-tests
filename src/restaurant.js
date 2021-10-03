@@ -91,25 +91,50 @@
 // };
 const restaurante = {};
 
-const createMenu = (myMenu) => Object.assign(restaurante, { fetchMenu: () => myMenu });
-// console.log(createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }));
-// createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
-
 const orderFromMenu = (request) => {
-  const consumption = { consumption: [] };
-  const response = !request ? consumption : consumption.consumption.push(request);
-  // return Object.assign(array, newObj);
-  return Object.assign(restaurante, response);
+  restaurante.consumption.push(request);
+};
+
+const payTheBill = () => {
+  let priceToPay = 0;
+  let itensToPay = restaurante.consumption;
+  for (let index = 0; index < itensToPay.length; index += 1) {
+    if (Object.keys(restaurante.fetchMenu().food).includes(itensToPay[index])) {
+      priceToPay += restaurante.fetchMenu().food[itensToPay[index]];
+      // console.log(obj.fetchMenu().food[itensToPay[index]]);
+    }
+    if (Object.keys(restaurante.fetchMenu().drinks).includes(itensToPay[index])) {
+      priceToPay += restaurante.fetchMenu().drinks[itensToPay[index]];
+    }
+  }
+  return priceToPay;
+};
+
+const createMenu = (myMenu) => {
+  const menu = Object.assign(restaurante, {
+    fetchMenu: () => myMenu,
+    consumption: [],
+    order: orderFromMenu,
+    pay: payTheBill,
+  });
+  return menu;
 };
 
 const meuRestaurante = createMenu({
-  food: { coxinha: 3.90, sanduiche: 9.90 },
-  drinks: { agua: 3.90, cerveja: 6.90 },
+  food: {
+    coxinha: 3.90,
+    sanduiche: 9.90,
+  },
+  drinks: {
+    agua: 3.90,
+    cerveja: 6.90,
+  },
 });
-console.log(meuRestaurante.fetchMenu());
-console.log(orderFromMenu('coxinha'));
-console.log(orderFromMenu('agua'));
-// console.log(orderFromMenu());
-console.log(meuRestaurante.consumption);
+meuRestaurante.order('coxinha');
+meuRestaurante.order('agua');
+meuRestaurante.order('coxinha');
+console.log('==========================');
+// console.log(meuRestaurante.fetchMenu());
+console.log(meuRestaurante.pay());
 
 module.exports = createMenu;
