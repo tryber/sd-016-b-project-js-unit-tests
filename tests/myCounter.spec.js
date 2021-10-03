@@ -21,3 +21,4 @@ describe('8 - Implemente a função `myCounter`', () => {
     expect(myCounter()).toEqual(expectedOutput);
   });
 });
+
