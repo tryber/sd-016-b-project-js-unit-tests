@@ -34,12 +34,12 @@
 */
 
 const entries = (object) => {
-  let resultadoEntries = []
+  let resultadoEntries = [];
   for (let index = 0; index < Object.keys(object).length; index += 1) {
     resultadoEntries.push([Object.keys(object)[index], Object.values(object)[index]]);
   }
   return resultadoEntries;
-}
+};
 
 const calculator = (number1, number2) => {
   const calc = {
