@@ -12,11 +12,13 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const casosUndefined = (arr) => {
+const casoUndefined1 = (arr) => {
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof arr[i] !== 'number') return undefined;
    }
+};
 
+const casoUndefined2 = (arr) => {
   for (let i = 0; i <= arr.length; i += 1) {
     if (arr.length === 0) return undefined;
    }
@@ -33,7 +35,8 @@ const calculaMedia = (arr) => {
 };
 
 const average = (arr) => {
-  casosUndefined(arr);
+  casoUndefined1(arr);
+  casoUndefined2(arr);
   calculaMedia(arr);
 };
 
