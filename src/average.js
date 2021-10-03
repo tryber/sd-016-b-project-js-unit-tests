@@ -23,20 +23,18 @@ const casosUndefined = (arr) => {
 };
 
 const calculaMedia = (arr) => {
+  let media = 0;
   for (let i = 0; i < arr.length; i += 1) {
     media += arr[i];
   }
 
   media /= arr.length;
+  return Math.round(media);
 };
 
 const average = (arr) => {
-  let media = 0;
-  
   casosUndefined(arr);
-  media = calculaMedia(arr);
-
-  return Math.round(media);
+  calculaMedia(arr);
 };
 
 module.exports = average;
