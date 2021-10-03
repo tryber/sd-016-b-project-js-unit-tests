@@ -20,10 +20,8 @@ const createStudent = (nome) => {
     name: nome,
     feedback: () => 'Eita pessoa boa!',
   };
-  return estudante.name;
+  return estudante;
 };
-console.log(createStudent('Danilo'));
-
  /*  const estudante = createStudent('Leandrão, o Lobo Solitário');
   expect(typeof estudante).toBe('object');
   expect(typeof estudante.feedback).toBe('function');
