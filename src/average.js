@@ -17,20 +17,20 @@ const average = (array) => {
   let sum = 0;
   let media = 0;
 
-  const isNotNumber = array.some((item) => { return typeof item !== 'number' });
+  const isNotNumber = array.some((item) =>{return typeof item !== 'number'});
 
   if (isNotNumber || array.length === 0) {
-    return undefined
-  };
+    return undefined;
+  }
 
   array.forEach((item) => {
-    sum += item
+    sum += item;
     // sum = sum + item
   });
 
   media = sum / array.length;
 
-  return Math.round(media)
+  return Math.round(media);
 };
 console.log(average(arrayTest));
 
