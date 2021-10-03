@@ -10,9 +10,31 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
-    --><--
 */
 
-const average = () => { };
+const arrayTest = [3, 4, 5]
+const average = (array) => {
+  let sum = 0
+  let media = 0
+
+  const isNotNumber = array.some((item) => {
+    return typeof item !== "number" //testando se algum item do array eh um nao numero
+  })
+
+  if (isNotNumber || array.length === 0) {
+    return undefined
+  }
+
+  array.forEach((item) => {
+    sum += item
+    // sum = sum + item
+  })
+
+  media = sum / array.length
+
+  return Math.round(media)
+};
+console.log(average(arrayTest));
+
 
 module.exports = average;
