@@ -33,8 +33,23 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
+const calculator = (number1, number2) => ({
+  sum: number1 + number2,
+  mult: number1 * number2,
+  div: Math.trunc(number1 / number2),
+  sub: number1 - number2,
+});
 
-const arrayGenerator = (type, object) => {};
+const arrayGenerator = (type, object) => {
+  if (type === 'values') {
+    return Object.values(object);
+  } if (type === 'keys') {
+    return Object.keys(object);
+  } 
+    return Object.entries(object);  
+};
 
 module.exports = { calculator, arrayGenerator };
+
+// O método Math.trunc() retorna a parte inteira de um número, descartando suas casas decimais.
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
