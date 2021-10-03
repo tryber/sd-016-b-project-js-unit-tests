@@ -26,6 +26,7 @@ const productDetails = require('../src/productDetails');
 
 */
 
+
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // fail('Teste vazio!');
