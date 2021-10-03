@@ -95,7 +95,6 @@ const createMenu = (menu) => {
     const orderedItems = restaurant.consumption;
 
     for (let i = 0; i < orderedItems.length; i += 1) {
-      // console.log(restaurant.fetchMenu.food[orderedItems[i]]);
       if (Object.keys(menu.food).includes(orderedItems[i])) {
         sum += menu.food[orderedItems[i]];
       }

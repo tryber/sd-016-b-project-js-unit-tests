@@ -49,9 +49,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui a
     // chave fetchMenu, a qual tem como valor uma função.
     // ```
-    const obj = createMenu({});
-    // Retorno: { fetchMenu: () => {}, ... }
+    // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
+    const obj = createMenu({});
+
     expect(typeof obj).toBe('object');
     expect(obj).toHaveProperty('fetchMenu');
     expect(typeof obj.fetchMenu).toBe('function');
@@ -64,8 +65,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     const newObj = createMenu({ food: {}, drink: {} });
 
-    expect(newObj.fetchMenu()).toHaveProperty('food');
-    expect(newObj.fetchMenu()).toHaveProperty('drink');
+    expect(newObj.fetchMenu()).toEqual({ food: {}, drink: {} });
 
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
@@ -84,7 +84,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
-    expect(returnedObj.consumption).toHaveLength(0);
+    expect(returnedObj.consumption).toEqual([]);
 
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -151,7 +151,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     returnedObj.order('agua');
     returnedObj.order('coxinha');
 
-    expect(returnedObj.pay()).toBeCloseTo(12.87, 2);
+    expect(returnedObj.pay()).toBeCloseTo(12.87);
 
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });

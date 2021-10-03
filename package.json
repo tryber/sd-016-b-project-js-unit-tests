@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/betrybe/sd-0x-block8-project-js-unit-test#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
     "eslint-config-trybe-fundamentals": "1.1.1",
-    "jest": "24.9.0"
+    "jest": "24.9.0",
+    "typescript": "^4.4.3"
   }
 }

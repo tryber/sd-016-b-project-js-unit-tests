@@ -38,8 +38,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // ref: https://www.w3schools.com/jsref/jsref_isarray.asp
     const isArray = Array.isArray(details);
 
-    // ref: https://jestjs.io/docs/expect#tobetruthy
-    expect(isArray).toBeTruthy();
+    expect(isArray).toBe(true);
 
     // Teste se o array retornado pela função contém dois itens dentro.
     // ref: https://jestjs.io/docs/expect#tohavelengthnumber
@@ -50,6 +49,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(typeof details[1]).toBe('object');
 
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    // ref: https://jestjs.io/docs/expect#tohavepropertykeypath-value
     expect(details[0]).not.toHaveProperty('name', 'Máscara');
     expect(details[0]).not.toHaveProperty('details.productID', 'Máscara123');
 
@@ -60,6 +60,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // ref: https://www.w3schools.com/jsref/jsref_slice_string.asp
     const productIDEnd0 = details[0].details.productId.slice(-3);
     const productIDEnd1 = details[1].details.productId.slice(-3);
+
     expect(productIDEnd0).toBe('123');
     expect(productIDEnd1).toBe('123');
   });
