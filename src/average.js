@@ -24,10 +24,10 @@ const average = (arr) => {
    }
 
   for (let i = 0; i < arr.length; i += 1) {
-    media = media + arr[i];
+    media += arr[i];
   }
 
-  media = media / arr.length;
+  media /= arr.length;
 
   return Math.round(media);
 };
