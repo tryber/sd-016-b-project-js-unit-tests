@@ -17,7 +17,7 @@ const average = (array) => {
   let sum = 0;
   let media = 0;
 
-  const isNotNumber = array.some((item) => { typeof item !== 'number' });
+  const isNotNumber = array.some((item) => typeof item !== 'number');
 
   if (isNotNumber || array.length === 0) {
     return undefined;
