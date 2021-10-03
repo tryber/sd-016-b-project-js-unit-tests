@@ -22,16 +22,19 @@ const casosUndefined = (arr) => {
    }
 };
 
-const average = (arr) => {
-  let media = 0;
-  
-  casosUndefined(arr);
-
+const calculaMedia = (arr) => {
   for (let i = 0; i < arr.length; i += 1) {
     media += arr[i];
   }
 
   media /= arr.length;
+};
+
+const average = (arr) => {
+  let media = 0;
+  
+  casosUndefined(arr);
+  media = calculaMedia(arr);
 
   return Math.round(media);
 };
