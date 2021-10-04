@@ -100,4 +100,4 @@ objetoRetornado.order("coxinha"); */
 
 // const createMenu = () => {};
 
-module.exports = createMenu;
+// esta parte era valida module.exports = createMenu;
