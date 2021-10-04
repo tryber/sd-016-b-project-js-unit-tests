@@ -12,6 +12,29 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+function isEmptyArray(array) {
+  if (array.length === 0) return true;
+  return false;
+}
+
+function hasNotNumber(array) {
+  for (let element of array) {
+    if (isNaN(element)) return true;
+  }
+  return false;
+}
+
+const average = (array) => {
+  if (isEmptyArray(array) || hasNotNumber(array)) return 'undefined';
+
+  let average;
+  for (let element of array) {
+    average += element;
+  }
+  return average;
+
+};
+
+console.log(average([2, 5, 9, 8]));
 
 module.exports = average;
