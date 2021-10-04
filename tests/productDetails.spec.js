@@ -39,9 +39,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Teste se os dois itens dentro do array retornado pela função são objetos.', () => {
   expect(typeof productDetails()).toBe('object');
 }); 
-it('Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.', () => {
-  expect(productDetails).toHaveProperty();
-});     
+// it('Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.', () => {
+//   expect(productDetails).toHaveProperty();
+// });     
     // Teste se os dois productIds terminam com 123.
  
 });
