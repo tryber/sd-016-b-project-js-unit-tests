@@ -14,7 +14,7 @@
 
 const average = (arrayVarSize) => {
   let sum = 0;
-  if (arrayVarSize === 0) {
+  if (arrayVarSize.length === 0) {
     return undefined;
   }
   for (let number of arrayVarSize) {
