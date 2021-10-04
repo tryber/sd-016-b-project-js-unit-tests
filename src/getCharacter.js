@@ -25,7 +25,7 @@ Elabore testes para verificar se a função está funcionando de acordo com o pr
 Parâmetros:
   - Uma string.
 
-Comportamento: 
+Comportamento:
   - getCharacter('Arya');
 
 Retorno:
