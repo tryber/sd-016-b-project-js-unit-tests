@@ -96,7 +96,7 @@ const preco = () => {
     if (valueDrink[value]) valor += valueDrink[value];
   });
 
-  return valor;
+  return valor * 1.1;
 };
 
 const createMenu = (obj) => {

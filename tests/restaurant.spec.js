@@ -142,8 +142,7 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     value3.order('coxinha');
     value3.order('agua');
     value3.order('coxinha');
-    expect(value3.pay()).toEqual(11.7);
-
+    expect(value3.pay()).toBeCloseTo(12.87);
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
