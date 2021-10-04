@@ -43,28 +43,13 @@ const calculator = (number1, number2) => {
   return obj;
 };
 
-const keys = (object) => {
-   let keys = Object.keys(object);
-   return keys;
-};
-
-const values = (object) => {
-  let values = Object.values(object);
-  return values
-};
-
-const entries = (object) => {
-  let entries = Object.entries(object);
-  return entries
-};
-
 const arrayGenerator = (type, object) => {
   if (type === 'keys') {
-    return keys(object);
+    return Object.keys(object);
   }else if (type === 'values') {
-    return values(object);
+    return Object.values(object);
   }else if (type === 'entries') {
-    return entries(object);
+    return Object.entries(object);
   }
 };
 
