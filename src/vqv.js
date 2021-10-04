@@ -16,6 +16,19 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (noum, age) => {
+  let phrase = '';
+  // console.log(noum);
+  // console.log(age);
+  if (!noum || !age) {
+    return undefined;
+  }
+  phrase = (`Oi, meu nome é ${noum}!
+Tenho ${age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`);
+  return phrase;
+};
 
+console.log(vqv('Maria', 90));
 module.exports = vqv;
