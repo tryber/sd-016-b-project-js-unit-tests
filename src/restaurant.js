@@ -83,6 +83,7 @@
 //
 const createMenu = (object) => ({
   fetchMenu: () => object,
+  consumption: [],
 });
 
 module.exports = createMenu;

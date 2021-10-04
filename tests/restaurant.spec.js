@@ -61,19 +61,23 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // ```
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     const objetoRetornado = createMenu({itens: 'colher', typeBread: 'australiano'});
-    objetoRetornado.fetchMenu(); 
+    objetoRetornado.fetchMenu();
     expect(objetoRetornado.fetchMenu()).toEqual({itens: 'colher', typeBread: 'australiano'});
 
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
-    // --------------------------------------------------------------------------------------
+    // 
+    // Feito!!
+
     // TESTE 4: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
-    // ```
+    
+    const menu = createMenu({ food: {}, drink: {} });
+    expect(menu.consumption).toEqual([]);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
