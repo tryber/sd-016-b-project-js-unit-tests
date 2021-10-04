@@ -14,7 +14,6 @@
 
 // Retorna verdadeiro se uma array for vazia;
 function isEmptyArray(array) {
-
   if (array.length === 0) return true;
   return false;
 }
