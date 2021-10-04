@@ -17,24 +17,16 @@ function isEmptyArray(array) {
   return false;
 }
 
-function hasNotNumber(array) {
-  for (let element of array) {
-    if (isNaN(element)) return true;
-  }
-  return false;
+function onlyNumber(array) {
+  for (let element of array) if (typeof element !== 'number') return false;
+  return true;
 }
 
 const average = (array) => {
-  if (isEmptyArray(array) || hasNotNumber(array)) return 'undefined';
-
-  let average;
-  for (let element of array) {
-    average += element;
-  }
-  return average;
-
+  if (!onlyNumber(array) || array.length === 0) return undefined;
+  let numbers = 0;
+  for (let element of array) numbers += Number(element);
+  return Math.round(numbers / array.length);
 };
-
-console.log(average([2, 5, 9, 8]));
 
 module.exports = average;
