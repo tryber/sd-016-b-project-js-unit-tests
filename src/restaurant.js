@@ -96,18 +96,20 @@ const orderFromMenu = (request) => {
 };
 
 const payTheBill = () => {
-  let priceToPay = 0;
-  let itensToPay = restaurante.consumption;
-  for (let index = 0; index < itensToPay.length; index += 1) {
-    if (Object.keys(restaurante.fetchMenu().food).includes(itensToPay[index])) {
-      priceToPay += restaurante.fetchMenu().food[itensToPay[index]];
-      // console.log(obj.fetchMenu().food[itensToPay[index]]);
+  const food = Object.entries(restaurante.fetchMenu())[0][1];
+  const drinks = Object.entries(restaurante.fetchMenu())[1][1];
+  let totalPrice = 0;
+
+  restaurante.consumption.forEach((element) => {
+    if (food[element] !== undefined) {
+      totalPrice += food[element];
     }
-    if (Object.keys(restaurante.fetchMenu().drinks).includes(itensToPay[index])) {
-      priceToPay += restaurante.fetchMenu().drinks[itensToPay[index]];
+    if (drinks[element] !== undefined) {
+      totalPrice += drinks[element];
     }
-  }
-  return priceToPay;
+  });
+
+  return totalPrice;
 };
 
 const createMenu = (myMenu) => {

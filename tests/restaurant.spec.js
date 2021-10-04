@@ -1,10 +1,11 @@
 const createMenu = require('../src/restaurant');
 
-const menu = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
-let obj = createMenu(menu);
-obj.order('agua');
-obj.order('coxinha');
-console.log(obj.pay());
+// const menu = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+// let obj = createMenu(menu);
+// obj.order('agua');
+// obj.order('coxinha');
+// console.log(obj.consumption);
+// console.log(obj.pay());
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -132,6 +133,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
-    expect(newOrder.pay()).toBeCloseTo(11.7);
+    const orderRequisito10 = createMenu(menu);
+    orderRequisito10.order('coxinha');
+    orderRequisito10.order('agua');
+    orderRequisito10.order('coxinha');
+    expect(orderRequisito10.pay()).toBeCloseTo(11.7);
   });
 });
