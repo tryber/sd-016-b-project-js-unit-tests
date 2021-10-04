@@ -21,8 +21,7 @@ const average = (arrayN) => {
   if (totalN > 0) {
     for (let i = 0; i < totalN; i += 1) {
       if (typeof (arrayN[i]) !== 'number' || totalN === 0) {
-        return undefined;
-        break;
+        return undefined;        
       } 
       valorTotal += arrayN[i];
     }      
