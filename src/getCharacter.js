@@ -53,6 +53,7 @@ const characters = {
     phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
   },
 };
+console.log(characters.melissandre);
 
 const getCharacter = (name) => {
   if (name === undefined) {
