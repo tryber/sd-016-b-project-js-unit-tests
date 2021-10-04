@@ -12,6 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
-
-module.exports = average;
+const average = (array) => {
+  let total = 0;  
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof (array[index]) !== 'number') {
+      return undefined;
+    }
+     total += array[index];
+    }
+    // A função Math.round() retorna o valor de um número arredondado para o inteiro mais proximo.
+    return Math.round(total / array.length);
+  };
+  
+  module.exports = average;
