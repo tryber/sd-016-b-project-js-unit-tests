@@ -1,9 +1,6 @@
-c* eslint-disable max-len */
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
-
 const circle = require('../src/circle');
-const numbers = require('../src/numbers');
-
 /*
   Essa função recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência).
   Se não for especificado um raio, a função retorna undefined.
@@ -26,23 +23,26 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
-    expect(circle('1')).toBeUndefined();
     expect(circle('a')).toBeUndefined();
-    expect(circle([' '])).toBeUndefined();
-    expect(circle({a : 1})).toBeUndefined();
+
     // Teste se circle retorna um objeto.
-    expect(typeof(circle(1))).toBe('object');
+    expect(typeof circle(2)).toEqual('object');
+
     // Teste se o objeto retornado tem 3 propriedades.
-    expect(Object.keys(circle(1)).length).toBe(3);
+    expect(Object.keys(circle(2)).length).toBe(3);
+
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    expect(circle()).toBeUndefined;
+    expect(circle()).toBeUndefined();
+
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    expect(circle(2)).toMatchObject({circumference : parseFloat(4*3.14)});
+    expect(circle(2)['circumference']).toEqual(12.56);
+
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    expect(circle(3)).toMatchObject({area : parseFloat(3.14 * 3 * 3)});
+    expect(circle(3)['area']).toBeCloseTo(28.26);
+
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    expect(circle(3)).toMatchObject({radius : 3});
-    expect(circle(3)).toMatchObject({area : parseFloat(3.14 * 3 * 3)});
-    expect(circle(3)).toMatchObject({circumference : parseFloat(3.14 * 3* 2)});
+    expect(circle(3)['circumference']).toBeCloseTo(18.84);
+    expect(circle(3)['radius']).toBeCloseTo(3);
+    expect(circle(3)['area']).toBeCloseTo(28.26);
   });
 });
