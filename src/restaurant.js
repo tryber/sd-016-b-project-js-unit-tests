@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
@@ -45,16 +44,30 @@
   IMPORTANTE: COMECE PELO TESTE 1 DO ARQUIVO `tests/restaurant.spec.js` E NÃO PELO PASSO 1 DESTE ARQUIVO!
 */
 
-// PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-//
+/* // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
+createMenu = () => {
+  objetoRetornado = {
+    fetchMenu: () => { 
+      objetoPassadoPorParametro;
+    },
+  };
+  return objetoRetornado;
+};
+  
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
-//
+createMenu.comsuption = [];
+// let myMenu = createMenu.comsuption;
+// myMenu.push('coxinha');
+// console.log(myMenu);
+objetoRetornado.consumption = [];
+let myMenu = objetoRetornado.comsuption;
+myMenu.push('coxinha');
+console.log(myMenu);
+ */
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
-
 //------------------------------------------------------------------------------------------
 
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
@@ -63,22 +76,28 @@
 // - Definir a função `createMenu()`
 // - Definir o objeto que a `createMenu()` retorna, mas separadamente 
 // - E, depois, definir a função que será atribuída a `order`.
-// ```
-// const restaurant = {}
-//
+/* 
+*/
+/* objetoRetornado.order = 
+objetoRetornado.order("coxinha"); */
+
+/* const restaurant = () => {
+  myMenu.push('coxinha');
+}; */
+// console.log(createMenu.length);
+
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
-//
+
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
-// ```
-// Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
+// Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 //------------------------------------------------------------------------------------------
 
 // PASSO 4: adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// const createMenu = () => {};
 
-module.exports = createMenu;
+// esta parte era valida module.exports = createMenu;
