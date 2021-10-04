@@ -12,11 +12,14 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
+// Retorna verdadeiro se uma array for vazia;
 function isEmptyArray(array) {
+
   if (array.length === 0) return true;
   return false;
 }
 
+// Retorna verdadeiro caso uma array for composta apenas por numeros;
 function onlyNumber(array) {
   for (let element of array) if (typeof element !== 'number') return false;
   return true;
