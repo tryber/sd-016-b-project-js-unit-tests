@@ -60,9 +60,9 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
-    const objetoRetornado = createMenu({itens: 'colher', typeBread: 'australiano'});
+    const objetoRetornadoTeste3 = createMenu({itens: 'colher', typeBread: 'australiano'});
     objetoRetornado.fetchMenu();
-    expect(objetoRetornado.fetchMenu()).toEqual({itens: 'colher', typeBread: 'australiano'});
+    expect(objetoRetornadoTeste3.fetchMenu()).toEqual({itens: 'colher', typeBread: 'australiano'});
 
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
@@ -76,8 +76,8 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     
-    const menu = createMenu({ food: {}, drink: {} });
-    expect(menu.consumption).toEqual([]);
+    const objetoRetornadoTeste4 = createMenu({ food: {}, drink: {} });
+    expect(objetoRetornadoTeste4.consumption).toEqual([]);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
@@ -87,7 +87,11 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
-    // ```
+    
+    const objetoRetornadoTeste5 = createMenu({ food: {}, drink: {} });
+    objetoRetornadoTeste5.order('coxinha');
+    expect(objetoRetornadoTeste5.consumption).toEqual(['coxinha']);
+
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique se, ao adicionar três pedidos, dentre bebidas e comidas, o array `objetoRetornado.consumption` contém os itens pedidos.
