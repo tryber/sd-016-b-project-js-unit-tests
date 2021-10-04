@@ -34,22 +34,38 @@
 */
 
 const calculator = (number1, number2) => {
-  let sum = number1 + number2; 
-  let mult = number1 * number2;
-  let div = Math.floor(number1 / number2);
-  let sub = number1 - number2;
-
   const obj = {
-    sum: sum, 
-    mult: mult,
-    div: div,
-    sub: sub,
+    sum: number1 + number2,
+    mult: number1 * number2,
+    div: Math.floor(number1 / number2),
+    sub: number1 - number2,
   };
   return obj;
 };
 
-console.log(calculator(5,9));
+const keys = (object) => {
+   let keys = Object.keys(object);
+   return keys;
+};
 
-const arrayGenerator = (type, object) => {};
+const values = (object) => {
+  let values = Object.values(object);
+  return values
+};
+
+const entries = (object) => {
+  let entries = Object.entries(object);
+  return entries
+};
+
+const arrayGenerator = (type, object) => {
+  if (type === 'keys') {
+    return keys(object);
+  }else if (type === 'values') {
+    return values(object);
+  }else if (type === 'entries') {
+    return entries(object);
+  }
+};
 
 module.exports = { calculator, arrayGenerator };
