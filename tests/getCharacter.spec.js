@@ -32,6 +32,7 @@ Retorno:
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
+    // eslint-disable-next-line no-undef
     fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
@@ -41,9 +42,8 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     const returnArya = {
       name: 'Arya Stark',
       class: 'Rogue',
-      phrases: [ 'Not today', 'A girl has no name.' ]
-    };
-    expect(getCharacter('Arya')).toEqual(returnArya);
+      phrases: ['Not today', 'A girl has no name.'],
+    expect(_getCharacter('Arya')).toEqual(returnArya);
 
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
     const returnBrienne = {
