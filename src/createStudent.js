@@ -18,10 +18,13 @@
 const createStudent = (string) => {
   let newObj = {
    name: string,
-   feedback: feedback() => {
-     return 
-   }
-  }
+   feedback: () => { return 'Eita pessoa boa!'; },      
+  };
+  return newObj;
 };
+
+const estudante = createStudent('Leandrão, o Lobo Solitário');
+
+console.log(estudante.feedback());
 
 module.exports = createStudent;
