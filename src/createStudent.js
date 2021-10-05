@@ -17,7 +17,7 @@
 
 const createStudent = (string) => {
   let newObj = {
-   name: string
+   name: string,
    feedback: feedback() => {
      return 
    }
