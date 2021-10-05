@@ -42,7 +42,10 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle()).toBeUndefined();
 
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    // ref: https://jestjs.io/docs/expect#tobeclosetonumber-numdigits
+    /*
+      Consultei o site abaixo para conhecer o matcher que compara valores próximos.
+      link: https://jestjs.io/docs/expect#tobeclosetonumber-numdigits
+    */
     expect(circle(2).circumference).toBeCloseTo(12.56);
 
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.

@@ -35,13 +35,19 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(typeof productDetails).toBe('function');
 
     // Teste se o retorno da função é um array.
-    // ref: https://www.w3schools.com/jsref/jsref_isarray.asp
+    /*
+      Consultei o site abaixo para compreender como identificar se um objeto é um array.
+      link: https://www.w3schools.com/jsref/jsref_isarray.asp
+    */
     const isArray = Array.isArray(details);
 
     expect(isArray).toBe(true);
 
     // Teste se o array retornado pela função contém dois itens dentro.
-    // ref: https://jestjs.io/docs/expect#tohavelengthnumber
+    /*
+      Consultei o site abaixo para compreender o matcher que compara o tamanho de um array.
+      link: https://jestjs.io/docs/expect#tohavelengthnumber
+    */
     expect(details).toHaveLength(2);
 
     // Teste se os dois itens dentro do array retornado pela função são objetos.
@@ -49,15 +55,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(typeof details[1]).toBe('object');
 
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // ref: https://jestjs.io/docs/expect#tohavepropertykeypath-value
-    expect(details[0]).not.toHaveProperty('name', 'Máscara');
-    expect(details[0]).not.toHaveProperty('details.productID', 'Máscara123');
-
-    expect(details[1]).not.toHaveProperty('name', 'Alcool gel');
-    expect(details[1]).not.toHaveProperty('details.productID', 'Alcool gel123');
+    expect(details[0]).not.toEqual(details[1]);
 
     // Teste se os dois productIds terminam com 123.
-    // ref: https://www.w3schools.com/jsref/jsref_slice_string.asp
+    /*
+      Consultei o site abaixo para descobrir como selecionar uma parte de uma string.
+      link: https://www.w3schools.com/jsref/jsref_slice_string.asp
+    */
     const productIDEnd0 = details[0].details.productId.slice(-3);
     const productIDEnd1 = details[1].details.productId.slice(-3);
 

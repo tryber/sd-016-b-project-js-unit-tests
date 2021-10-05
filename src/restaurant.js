@@ -84,7 +84,7 @@ const restaurant = {};
 const orderFromMenu = (request) => { restaurant.consumption.push(request); };
 
 const createMenu = (menu) => {
-  restaurant.fetchMenu = () => (menu);
+  restaurant.fetchMenu = () => menu;
 
   restaurant.consumption = [];
 

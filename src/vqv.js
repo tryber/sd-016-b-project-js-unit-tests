@@ -17,7 +17,10 @@
 */
 
 const vqv = (name, age) => {
-  // ref: http://frontendcollisionblog.com/javascript/2015/03/20/how-do-i-check-if-a-parameter-was-passed-in-to-a-javascript-function.html
+  /*
+    Consultei o site abaixo para compreender como identificar se os parâmetro de uma função foram passados.
+    link: http://frontendcollisionblog.com/javascript/2015/03/20/how-do-i-check-if-a-parameter-was-passed-in-to-a-javascript-function.html
+  */
   if ((!name) && (!age)) {
     return undefined;
   }

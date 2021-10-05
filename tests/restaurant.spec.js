@@ -54,6 +54,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     const obj = createMenu({});
 
     expect(typeof obj).toBe('object');
+    /*
+      Consultei o site abaixo para compreender o matcher que checa se um objeto tem uma determinada chave.
+      link: https://jestjs.io/docs/expect#tohavepropertykeypath-value
+    */
     expect(obj).toHaveProperty('fetchMenu');
     expect(typeof obj.fetchMenu).toBe('function');
 
@@ -64,10 +68,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     const newObj = createMenu({ food: {}, drink: {} });
-    const newObjKeys = Object.keys(newObj.fetchMenu());
+    const keys = Object.keys(newObj.fetchMenu());
 
-    expect(newObjKeys).toHaveLength(2);
-    expect(newObjKeys).toEqual(['food', 'drink']);
+    expect(keys).toHaveLength(2);
+    expect(keys).toEqual(['food', 'drink']);
 
     // TESTE 3: Verifique se o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
