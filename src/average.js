@@ -22,11 +22,9 @@ const average = (array) => {
       return undefined;
     }   
   }
-  if (array == '') {
+  if (array === '') {
     return undefined;
   }
   return Math.round(sumOfElements / numberOfElements);  
-  
 };
-
 module.exports = average;
