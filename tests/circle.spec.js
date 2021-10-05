@@ -34,10 +34,9 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(typeof circle(1)).toBe('object');
 
     // Teste se o objeto retornado tem 3 propriedades.
-    // ref: https://jestjs.io/docs/expect#tohavepropertykeypath-value
-    expect(circle(1)).toHaveProperty('radius');
-    expect(circle(1)).toHaveProperty('area');
-    expect(circle(1)).toHaveProperty('circumference');
+    const properties = Object.keys(circle(1));
+
+    expect(properties).toHaveLength(3);
 
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     expect(circle()).toBeUndefined();
@@ -50,8 +49,10 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(3).area).toBeCloseTo(28.26);
 
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    expect(circle(3).radius).toBeCloseTo(3);
-    expect(circle(3).area).toBeCloseTo(28.26);
-    expect(circle(3).circumference).toBeCloseTo(18.84);
+    const returnedObj = circle(3);
+
+    expect(returnedObj.radius).toBeCloseTo(3);
+    expect(returnedObj.area).toBeCloseTo(28.26);
+    expect(returnedObj.circumference).toBeCloseTo(18.84);
   });
 });
