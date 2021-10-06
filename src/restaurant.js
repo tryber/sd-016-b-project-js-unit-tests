@@ -81,9 +81,13 @@
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 //
-const createMenu = (object) => ({
-  fetchMenu: () => object,
-  consumption: [],
-});
+const createMenu = (myMenu) => {
+  const restaurant = {};
+  const orderFromMenu = (request) => restaurant.consumption.push(request);
+  restaurant.fetchMenu = () => myMenu;
+ restaurant.consumption = [];
+  restaurant.order = orderFromMenu;
+  return restaurant;
+};
 
 module.exports = createMenu;
