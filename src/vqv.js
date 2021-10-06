@@ -17,8 +17,7 @@
 */
 
 const vqv = (name, age) => {
-  if (typeof name !== 'string' || typeof age !== 'number') 
-  return undefined;
+  if (typeof name !== 'string' || typeof age !== 'number') return undefined;
   const paragraph = `Oi, meu nome é ${name}!\n
   Tenho ${age} anos,\n
   trabalho na Trybe e mando muito bem em programação!\n
