@@ -36,7 +36,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(productDetails('agua', 'gelo')).toHaveLength(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
     const products = productDetails('Algodão', 'Papel Higiênico');
-
     expect(typeof products[0]).toBe('object');
     expect(typeof products[1]).toBe('object');
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
