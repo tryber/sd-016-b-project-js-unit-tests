@@ -1,17 +1,19 @@
-const myCounter = () => {}
+/* eslint-disable space-before-blocks */
+/* eslint-disable brace-style */
+/* eslint-disable no-shadow */
+const myCounter = () => {
   var myArray = [];
   for (var counter = 0; counter <= 3; counter += 1) {
+  // eslint-disable-next-line block-spacing
+  // eslint-disable-next-line brace-style
+  // eslint-disable-next-line block-spacing
+  let myArray = [];}
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
-  let myArray = [];
-  for (let k = 0; k <= 3; k += 1) {
-    myArray.push(k);
-    for (let j = 2; j <= 3; j += 1) {
-      myArray.push(j);
+   for (let counter2 = 2; counter2 <= 3; counter2 += 1){
+      myArray.push(counter2);
     }
   }
-  }
-return myCounter;
+  return myArray;
 };
-mmodule.exports = myCounter;
+module.exports = myCounter;
