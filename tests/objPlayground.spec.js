@@ -1,3 +1,5 @@
+/* eslint-disable array-bracket-spacing */
+/* eslint-disable max-len */
 const { calculator, arrayGenerator } = require('../src/objPlayground');
 
 /*

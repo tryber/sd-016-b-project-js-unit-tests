@@ -1,6 +1,9 @@
-const createStudent = (name) => ({
-  name,
-  feedback: () => 'Eita pessoa boa!',
-});
+const createStudent = (nome) => {
+  let obj = {
+    name: nome,
+    feedback: () => 'Eita pessoa boa!',
+  };
+  return obj;
+};
 
 module.exports = createStudent;
