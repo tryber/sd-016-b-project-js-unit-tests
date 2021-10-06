@@ -16,6 +16,15 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (strg, number) => {
+  if (typeof strg !== 'string' && typeof number !== 'string') { 
+    return undefined;
+  }
+    let textinho = `Oi, meu nome é ${strg}!\n`
+      + `Tenho ${number} anos,\n`
+      + 'trabalho na Trybe e mando muito em programação!\n'
+      + '#VQV!';
+      return textinho;
+};
 
 module.exports = vqv;
