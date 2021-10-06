@@ -7,7 +7,6 @@
   A função myCounter possui dois loops aninhados que inserem valores dentro de um array.
   Como podemos perceber, eles vão adicionando valores ao array até sua condição de parada.
   Corrija o código abaixo para que a função retorne o array correto.
-  Atenção: não remova os `for`s da função e sim corrija os erros presentes.
 
   Parâmetros:
   - Nenhum.

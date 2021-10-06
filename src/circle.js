@@ -15,15 +15,12 @@
 
   DICA: Números de ponto flutuante em JavaScript são imprecisos! Para testar, vá no seu navegador e faça `0.2 + 0.1`.
         Uma solução pra isso pode ser fazer a soma no seguinte formato: `parseFloat((0.2 + 0.1).toPrecision(2))`.
-        Outra dica: que tal pesquisar se existe um matcher que compara valores próximos?
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
 const circle = (radius) => {
   const PI = 3.14;
-
-  if (!radius || typeof radius !== 'number') { return undefined; }
-
+  if (!radius) { return undefined; }
   return {
     radius,
     area: PI * radius * radius,
