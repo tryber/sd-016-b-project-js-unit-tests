@@ -1,4 +1,4 @@
-const myCounter = () => {
+const myCounter = () => {}
   var myArray = [];
   for (var counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
@@ -11,6 +11,7 @@ const myCounter = () => {
       myArray.push(j);
     }
   }
-return myArray;
+  }
+return myCounter;
 };
 mmodule.exports = myCounter;

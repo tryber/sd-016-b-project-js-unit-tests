@@ -32,41 +32,43 @@ Retorno:
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    // eslint-disable-next-line no-undef
-    fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
     expect(getCharacter()).toBeUndefined();
-
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
-    const returnArya = {
+    expect(getCharacter('Arya')).toMatchObject({
       name: 'Arya Stark',
       class: 'Rogue',
       phrases: ['Not today', 'A girl has no name.'],
-    expect(_getCharacter('Arya')).toEqual(returnArya);
-
+    });
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
-    const returnBrienne = {
+    expect(getCharacter('Brienne')).toMatchObject({
       name: 'Brienne Tarth',
       class: 'Knight',
-      phrases: [ 'Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.' ]
-    };
-    expect(getCharacter('Brienne')).toEqual(returnBrienne);
-
+      phrases: [
+        'Im No Lady, Your Grace.',
+        'I, Brienne Of Tarth, Sentence You To Die.',
+      ],
+    });
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-    const returnMelissandre = {
+    expect(getCharacter('Melissandre')).toMatchObject({
       name: 'Melissandre',
       class: 'Necromancer',
-      phrases: [ 'Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.' ]
-    };
-    expect(getCharacter('Melissandre')).toEqual(returnMelissandre);
-
+      phrases: [
+        'Death By Fire Is The Purest Death.',
+        'For The Night Is Dark And Full Of Terrors.',
+      ],
+    });
     // Teste se os parâmetros não são Case Sensitive.
-    expect(getCharacter('arya')).toEqual(returnArya);
-    expect(getCharacter('arYa')).toEqual(returnArya);
-    expect(getCharacter('ARYA')).toEqual(returnArya);
-
+    expect(getCharacter('MelIsSAnDre')).toMatchObject({
+      name: 'Melissandre',
+      class: 'Necromancer',
+      phrases: [
+        'Death By Fire Is The Purest Death.',
+        'For The Night Is Dark And Full Of Terrors.',
+      ],
+    });
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
-    expect(getCharacter('Mychael')).toBeUndefined();
+    expect(getCharacter('JohnSnow')).toBeUndefined();
   });
 });
