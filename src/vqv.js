@@ -28,6 +28,3 @@ trabalho na Trybe e mando muito em programação!
 };
 
 module.exports = vqv;
-
-// links utilizados para a construção do código:
-// 1. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toString 
