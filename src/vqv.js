@@ -16,6 +16,18 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (name, age) => {
+  if (name == null || age == null) {
+    return undefined;
+  }
+  
+  return `Oi, meu nome é ${name}!
+Tenho ${age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+};
 
 module.exports = vqv;
+
+// links utilizados para a construção do código:
+// 1. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toString 
