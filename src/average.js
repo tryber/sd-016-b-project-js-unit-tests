@@ -3,7 +3,6 @@
   Caso a função receba algum valor não númerico ou um array vazio,
   o valor undefined deve ser retornado.
   Todos os resultados devem ser arredondados para valores inteiros. Ex: 4,6 vira 5; 1,3 vira 1.
-
   Parâmetros:
     - Um array. Exemplos: [1, 2]; [1, 2, 3, 4, 5]; [1, 2, '3']; [];
   Comportamento:
@@ -22,4 +21,4 @@ const average = (array) => {
   let media = Math.round((soma / array.length));
   return media;
 };
-module.exports = average; 
+module.exports = average;
