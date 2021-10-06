@@ -88,7 +88,7 @@ const createMenu = (obj) => {
   newMenu.fetchMenu = () => obj;
   newMenu.consumption = [];
   newMenu.order = newOrder;
-
+  
   newMenu.pay = () => {
     let count = 0;
     for (let index = 0; index < newMenu.consumption.length; index += 1) {
@@ -100,9 +100,9 @@ const createMenu = (obj) => {
       }
     }   
     count += ((count / 100) * 10);
-    return count;    
+    return count;
   };
-
+  
   return newMenu;
 };
 
