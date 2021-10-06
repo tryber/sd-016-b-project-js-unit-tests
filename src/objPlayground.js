@@ -16,15 +16,20 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = { add: (a, b) => a + b,
-  mult: (a, b) => a * b,
-  div: (a, b) => Math.floor(a / b),
-  sub: (a, b) => a - b };
-
-  const arrayGenerator = (type, object) => {
-    if (type === 'keys') return Object.keys(object);
-    if (type === 'values') return Object.values(object);
-    if (type === 'entries') return Object.entries(object);
+const calculator = (number1, number2) => {
+  const operacao = { 
+    sum: number1 + number2,
+    mult: number1 * number2,
+    div: Math.floor(number1 / number2),
+    sub: number1 - number2,
   };
+  return operacao;
+};
+
+const arrayGenerator = (type, object) => {
+  if (type === 'keys') return Object.keys(object);
+  if (type === 'values') return Object.values(object);
+  if (type === 'entries') return Object.entries(object);
+};
 
 module.exports = { calculator, arrayGenerator };
