@@ -33,8 +33,30 @@
   arrayGenerator('entries', { sum: 3, mult: 2, div: 1, sub: 0 }) // [ [ 'sum', 3 ], [ 'mult', 2 ], [ 'div', 1 ], [ 'sub', 0 ] ]
 */
 
-const calculator = (number1, number2) => {};
+const calculator = (number1, number2) => {
+  const operation = {
+    sum: number1 + number2,
+    mult: number1 * number2,
+    div: Math.trunc(number1 / number2),
+    sub: number1 - number2,
+  };
+  return operation;
+};
 
-const arrayGenerator = (type, object) => {};
+const arrayGenerator = (type, object) => {
+  if (type === 'keys') {
+    return Object.keys(object);
+  }
+  if (type === 'values') {
+    return Object.values(object);
+  }
+  if (type === 'entries') {
+    return Object.entries(object);
+  }
+  return undefined;
+};
 
 module.exports = { calculator, arrayGenerator };
+
+// Links utilizados para construção do código
+// 1. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
