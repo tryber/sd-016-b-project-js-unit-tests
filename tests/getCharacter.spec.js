@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const getCharacter = require('../src/getCharacter');
+const assert = require('assert');
 
 /*
 Essa função recebe como parâmetro o nome de um personagem e retorna um objeto com seu nome, classe e frases.
@@ -43,13 +44,42 @@ Retorno:
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    expect(getCharacter()).toBeUndefined()
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+    let name = 'Arya'
+    let obj1 = {
+      name: 'Arya Stark',
+      class: 'Rogue',
+      phrases: [ 'Not today', 'A girl has no name.' ]
+    }
+    assert.deepStrictEqual(getCharacter(name),obj1)
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+    name = 'Brienne'
+    let obj2 = {
+      name: 'Brienne Tarth',
+      class: 'Knight',
+      phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
+    }
+    assert.deepStrictEqual(getCharacter(name),obj2)
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+    name = 'Melissandre'
+    let obj3 = {
+      name: 'Melissandre',
+      class: 'Necromancer',
+      phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
+    }
+    assert.deepStrictEqual(getCharacter(name),obj3)
     // Teste se os parâmetros não são Case Sensitive.
+    name = 'mElIsSanDre'
+    let obj4 = {
+      name: 'Melissandre',
+      class: 'Necromancer',
+      phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
+    }
+    assert.deepStrictEqual(getCharacter(name),obj4)  
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+    expect(getCharacter('douglas sabino')).toBeUndefined()
   });
 });
