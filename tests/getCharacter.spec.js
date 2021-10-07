@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
-
+const assert = require('assert');
 const getCharacter = require('../src/getCharacter');
 
 /*
@@ -43,13 +43,24 @@ Retorno:
 
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
   it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    fail('Teste vazio!');
+   
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    assert.equal(getCharacter(), undefined);
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+    const objectArya =  {name: 'Arya Stark', class: 'Rogue', phrases: ['Not today', 'A girl has no name.']};
+    assert.deepStrictEqual(getCharacter('Arya'), objectArya);
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+    const objectBrienne =  {name: 'Brienne Tarth', class: 'Knight', phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.']};
+    assert.deepStrictEqual(getCharacter('Brienne'), objectBrienne);
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+    const objectMelissandre =  {name: 'Melissandre', class: 'Necromancer', phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.']};
+    assert.deepStrictEqual(getCharacter('Melissandre'), objectMelissandre);
     // Teste se os parâmetros não são Case Sensitive.
+    assert.deepStrictEqual(getCharacter('ARYA'), objectArya);
+    assert.deepStrictEqual(getCharacter('BRIENNE'), objectBrienne);
+    assert.deepStrictEqual(getCharacter('MELISSANDRE'), objectMelissandre);
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+    assert.deepStrictEqual(getCharacter('Tatiana'), undefined);
   });
 });
