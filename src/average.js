@@ -26,12 +26,9 @@ const average = (arrayN) => {
       valorTotal += arrayN[i];
     }      
     resultado = valorTotal / totalN;
-    return Math.round(resultado);
-  } else {
-    return undefined;
-  }  
-}; 
-
+    return Math.round(resultado);  
+  }
+};
 // let teste = [''];
 // console.log(teste.length);
 

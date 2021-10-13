@@ -58,5 +58,6 @@ const arrayGenerator = (type, object) => {
   }
   return results;
 };
+
 console.log(calculator(5, 2));
 module.exports = { calculator, arrayGenerator };

@@ -42,3 +42,4 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     expect(circle(3)).toMatchObject({radius: 3, area: 28.259999999999998, circumference: 18.84});
   });
 });
+

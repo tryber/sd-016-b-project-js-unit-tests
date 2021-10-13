@@ -23,5 +23,6 @@ const createStudent = (nome) => {
   return estudante;
 };
 const estudante = createStudent('Leandrão, o Lobo Solitário');
+
 console.log(typeof estudante.feedback);
 module.exports = createStudent;
