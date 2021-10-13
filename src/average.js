@@ -18,19 +18,30 @@ const average = (arrayN) => {
   let resultado = 0;
   // if (Array.isArray(arrayN)) {
   //   return undefined;  
-  if (totalN > 0) {
-    for (let i = 0; i < totalN; i += 1) {
-      if (typeof (arrayN[i]) !== 'number' || totalN === 0) {
-        return undefined;        
-      } 
-      valorTotal += arrayN[i];
-    }      
-    resultado = valorTotal / totalN;
-    return Math.round(resultado);  
+  // if (totalN > 0) {
+  //   for (let i = 0; i < totalN; i += 1) {
+  //     if (typeof (arrayN[i]) !== 'number' || totalN === 0) {
+  //       return undefined;        
+  //     } 
+  //     valorTotal += arrayN[i];
+  //   }      
+  //   resultado = valorTotal / totalN;
+  //   return Math.round(resultado);  
+  // }
+  if (totalN === 0) {
+    return undefined;
   }
+  arrayN.forEach((number) => {
+    console.log(typeof (number));
+    if (typeof (number) === 'string' || totalN === 0) {
+      return undefined;
+    }  
+    valorTotal += number;      
+    });
+  return Math.round(valorTotal / totalN);
 };
 // let teste = [''];
 // console.log(teste.length);
 
-console.log(average([' ']));
+console.log(average([1, 2, 3, '4', 5]));
 module.exports = average;
