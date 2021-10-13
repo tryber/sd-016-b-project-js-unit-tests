@@ -15,33 +15,23 @@
 const average = (arrayN) => {
   let valorTotal = 0;
   let totalN = arrayN.length;
-  let resultado = 0;
-  // if (Array.isArray(arrayN)) {
-  //   return undefined;  
-  // if (totalN > 0) {
-  //   for (let i = 0; i < totalN; i += 1) {
-  //     if (typeof (arrayN[i]) !== 'number' || totalN === 0) {
-  //       return undefined;        
-  //     } 
-  //     valorTotal += arrayN[i];
-  //   }      
-  //   resultado = valorTotal / totalN;
-  //   return Math.round(resultado);  
-  // }
+  let stringCheck = false;
   if (totalN === 0) {
     return undefined;
   }
   arrayN.forEach((number) => {
-    console.log(typeof (number));
-    if (typeof (number) === 'string' || totalN === 0) {
-      return undefined;
-    }  
-    valorTotal += number;      
+    // console.log(typeof (number));
+    if (typeof (number) !== 'number') {
+      stringCheck = true;
+    } 
+    valorTotal += number;
+    // console.log(valorTotal);      
     });
+  if (stringCheck === true) { return undefined; }  
   return Math.round(valorTotal / totalN);
 };
 // let teste = [''];
 // console.log(teste.length);
 
-console.log(average([1, 2, 3, '4', 5]));
+console.log(average([1, 2, 3, 4, 5]));
 module.exports = average;
