@@ -47,7 +47,19 @@ const calculator = (number1, number2) => {
 };
 
 const arrayGenerator = (type, object) => {
-
+  switch (type) {
+    case "keys":
+      return Object.keys(object);
+      break;
+    case "values":
+      return Object.values(object);
+      break;
+    case "keys":
+      return Object.keys(object);
+      break;
+    default:
+      break;
+  }
 };
 
 module.exports = { calculator, arrayGenerator };
