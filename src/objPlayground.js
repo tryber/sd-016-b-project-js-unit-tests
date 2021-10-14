@@ -35,10 +35,10 @@
 
 const calculator = (number1, number2) => {
   let results = {};
-  let sum = Math.round(number1 + number2);
-  let mult = Math.round(number1 * number2);
-  let div = Math.round(number1 / number2);
-  let sub = Math.round(number1 - number2);
+  let sum = Math.floor(number1 + number2);
+  let mult = Math.floor(number1 * number2);
+  let div = Math.floor(number1 / number2);
+  let sub = Math.floor(number1 - number2);
   results.sum = sum;
   results.mult = mult;
   results.div = div;
@@ -54,12 +54,13 @@ const arrayGenerator = (type, object) => {
     case "values":
       return Object.values(object);
       break;
-    case "keys":
-      return Object.keys(object);
+    case "entries":
+      return Object.entries(object);
       break;
     default:
       break;
   }
 };
+console.log(arrayGenerator('entries', { sum: 13, mult: 30, div: 3, sub: 7 }));
 
 module.exports = { calculator, arrayGenerator };
