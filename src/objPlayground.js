@@ -48,15 +48,12 @@ const calculator = (number1, number2) => {
 
 const arrayGenerator = (type, object) => {
   switch (type) {
-    case "keys":
+    case 'keys':
       return Object.keys(object);
-      break;
-    case "values":
+    case 'values':
       return Object.values(object);
-      break;
-    case "entries":
+    case 'entries':
       return Object.entries(object);
-      break;
     default:
       break;
   }
