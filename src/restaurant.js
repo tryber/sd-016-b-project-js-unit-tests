@@ -79,46 +79,40 @@
 // que percorre por todos os itens de `objetoRetornado.consumption`, soma o preço deles e retorna o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = (menu) => {
-  const restaurant = {
-    fetchMenu: () => {
-      let menuFetch = menu;
-      return menuFetch;
-    },
+const orderFromMenu = (request, consumption) => {
+  consumption.push(request);
+};
+
+const getBill = (keys, menu, consumed, i) => {
+  for (let j = 0; j < keys.length; j += 1) {
+    if (menu[keys[j]][consumed[i]] !== undefined) {
+      return menu[keys[j]][consumed[i]];
+    }
+  }
+};
+
+const payment = (menu, consumed) => {
+  if (consumed.length === 0) return 0;
+
+  let bill = 0;
+
+  const keys = Object.keys(menu);
+  for (let i = 0; i < consumed.length; i += 1) {
+    bill += getBill(keys, menu, consumed, i);
+  }
+  return parseFloat(parseFloat(bill * 1.10).toFixed(2));
+};
+
+const createMenu = (object) => {
+  const objReturned = {
+    fetchMenu: () => object,
     consumption: [],
-    order: (string) => {
-      restaurant.consumption.push(string);
-    },
-    pay: () => {
-      let valorTotal = 0;
-      let tax = 0.10;
-      let valorTotalComTaxa = 0;
-
-      let listaConsumo = restaurant.consumption;
-
-      let chaveObjetoFood = Object.keys(restaurant.fetchMenu().food); let valorObjFood = Object.values(restaurant.fetchMenu().food);
-      let chaveObjDrink = Object.keys(restaurant.fetchMenu().drink); let valorObjDrink = Object.values(restaurant.fetchMenu().drink);
-
-      for (let k = 0; k < listaConsumo.length; k += 1) {
-        for (let i = 0; i < chaveObjetoFood.length; i += 1) {
-          if (listaConsumo[k] === chaveObjetoFood[i]) {
-            valorTotal += valorObjFood[i];
-            break;
-          }
-        }
-
-        for (let j = 0; j < chaveObjDrink.length; j += 1) {
-          if (listaConsumo[k] === chaveObjDrink[j]) {
-            valorTotal += valorObjDrink[j];
-            break;
-          }
-        }
-      }
-      valorTotalComTaxa = valorTotal + (valorTotal * tax);
-      return valorTotalComTaxa;
-    },
   };
-  return restaurant;
+
+  objReturned.order = (request) => orderFromMenu(request, objReturned.consumption);
+  objReturned.pay = () => payment(objReturned.fetchMenu(), objReturned.consumption);
+
+  return objReturned;
 };
 
 module.exports = createMenu;
