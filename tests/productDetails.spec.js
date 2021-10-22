@@ -41,7 +41,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       for (let index = id.length - 3; index < id.length; index++) {
         const numbers = '123';
         expect((numbers[(index - id.length) + 3] === id[index])).toBe(true);
-        }
-      }   // Teste se os dois productIds terminam com 123.
+      }
+    }   // Teste se os dois productIds terminam com 123.
   });
 });
