@@ -18,11 +18,7 @@
 
 const vqv = (name, age) => {
 let text;
-if (typeof (name) !== 'string' || typeof (age) !== 'number') {
-  return undefined; 
-}
-
-if(typeof (name) === 'undefined' || typeof (age) === 'undefined'){
+if (typeof (name) === 'undefined' || typeof (age) === 'undefined') {
   return undefined;
 }
 
