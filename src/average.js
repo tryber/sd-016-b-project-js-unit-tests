@@ -26,7 +26,6 @@ const average = (num) => {
   }
   sum = num[i] + sum;
   med = sum / den;
-
 } 
  return Math.round(med);
 };
