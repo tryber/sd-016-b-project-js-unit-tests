@@ -13,25 +13,19 @@
 */
 
 const average = (num) => {
-
   let den = num.length;
   let sum = 0;
 
-  if(num.length < 1) {
+if(num.length < 1) {
     return undefined;
   }
-  for(let i=0; i< num.length; i+=1){
-    if(typeof(num[i]) === 'string'){
-        return undefined;
-    }
-
-    sum = num[i] + sum;
-    med = sum/den;
-    
-
+for(let i=0; i< num.length; i+=1){
+  if(typeof(num[i]) === 'string'){
+  return undefined;
   }
-
-    
+  sum = num[i] + sum;
+  let med = sum/den;  
+  } 
   return Math.round(med);
 
 
