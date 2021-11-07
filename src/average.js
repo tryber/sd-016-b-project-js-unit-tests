@@ -17,18 +17,18 @@ const average = (num) => {
   let sum = 0;
   let med;
 
-if(num.length < 1) {
+  if (num.length < 1) {
     return undefined;
   }
-for(let i=0; i< num.length; i+=1){
-  if(typeof(num[i]) === 'string'){
+ for (let i = 0; i < num.length; i += 1) {
+    if (typeof (num[i]) === 'string') {
   return undefined;
   }
   sum = num[i] + sum;
   med = sum / den;
 
-} 
-return Math.round(med);
+ } 
+ return Math.round(med);
 };
 
 module.exports = average;
