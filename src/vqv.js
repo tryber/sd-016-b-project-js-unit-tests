@@ -18,15 +18,21 @@
 
 const vqv = (name, age) => {
 let text;
-if (typeof (name) !== 'string' || typeof (age) !== 'number'|| typeof (name) === 'undefined' || typeof (age) === 'undefined') {
+if (typeof (name) !== 'string' || typeof (age) !== 'number') {
   return undefined; 
+}
+
+if(typeof (name) === 'undefined' || typeof (age) === 'undefined'){
+  return undefined;
 }
 
 if (name === '' || age === '') {
   return undefined;
 }
 
-text = `Oi, meu nome é ${name}!\nTenho ${age} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`
+text = `Oi, meu nome é ${name}!\nTenho ${age} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
 
 return text;
 };
