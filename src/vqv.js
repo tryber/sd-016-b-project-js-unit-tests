@@ -16,16 +16,17 @@
       #VQV!'
 */
 
-const vqv = (employee, age) => {  
-if (typeof (employee) !== 'string' || typeof (age) !== 'number'|| typeof (employee) === 'undefined' || typeof (age) === 'undefined') {
+const vqv = (name, age) => {
+let text;
+if (typeof (name) !== 'string' || typeof (age) !== 'number'|| typeof (name) === 'undefined' || typeof (age) === 'undefined') {
   return undefined; 
 }
 
-if (employee === '' || age === '') {
+if (name === '' || age === '') {
   return undefined;
 }
 
-let text = `Oi, meu nome é ${employee}!\nTenho ${age} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`
+text = `Oi, meu nome é ${name}!\nTenho ${age} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`
 
 return text;
 };
