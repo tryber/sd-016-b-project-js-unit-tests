@@ -11,8 +11,25 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-// inicio do projeto
 
-const average = () => {};
+// iniciando o projeto
+const verifyString = (array) => {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] !== (parseInt((array[i]), 10))) {
+      return true;  
+    }
+  }
+};
+
+const average = (array) => {
+  if (array.length === 0 || verifyString(array)) {
+    return undefined;
+  }
+  let sum = array[0];
+  for (let i = 1; i < array.length; i += 1) {
+    sum += array[i];
+  }
+  return Math.round((sum / array.length)); 
+};
 
 module.exports = average;
