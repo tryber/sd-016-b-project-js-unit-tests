@@ -22,9 +22,21 @@
 const calculator = () => {
 };
 
-calculator.add = (num1, num2) => num1 + num2;
+calculator.sum = (num1, num2) => num1 + num2;
 calculator.mult = (num1, num2) => num1 * num2;
 calculator.div = (num1, num2) => Math.floor(num1 / num2);
 calculator.sub = (num1, num2) => num1 - num2;
+
+const arrayGenerator = (string, calObj) => {
+  let arrayResp = [];
+  if (string === 'keys') {
+    arrayResp = Object.keys(calObj);
+  } else if (string === 'values') {
+    arrayResp = Object.values(calObj);
+  } else {
+    arrayResp = Object.entries(calObj);
+  }
+  return arrayResp;
+};
 
 module.exports = calculator;
