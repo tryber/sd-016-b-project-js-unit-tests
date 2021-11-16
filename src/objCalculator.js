@@ -19,7 +19,14 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = () => {
+const calculator = (num1, num2) => {
+  const objCalc = {
+    sum: num1 + num2,
+    mult: num1 * num2,
+    div: Math.floor(num1 / num2),
+    sub: num1 - num2,
+  };
+  return objCalc;
 };
 
 calculator.sum = (num1, num2) => num1 + num2;
